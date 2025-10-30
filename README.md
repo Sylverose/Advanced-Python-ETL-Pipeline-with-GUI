@@ -302,7 +302,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 ## 📞 Contact
 • Project Maintainer: Andy Sylvia Rosenvold
 • Email: [andy.rosenvold@specialisterne.com](mailto:andy.rosenvold@specialisterne.com)
-• Repository: [Repository URL](https://github.com/Sylverose)
+• Repository: [Repository URL]([https://github.com/Sylverose](https://github.com/Sylverose/Advanced-Python-ETL-Pipeline-with-GUI)
 
 
 
@@ -347,6 +347,7 @@ python src/cache_cleaner.py      # Clean project cache files
 python -c "from src.exceptions import ETLException, DatabaseError; print('Exception system loaded')"
 python -c "from src.api import AsyncAPIClient; print('API client loaded')"
 ```
+
 
 
 
