@@ -84,7 +84,7 @@ ETL/
 │   ├── CSV/        # Original CSV data sources
 │   └── API/        # API-generated CSV exports
 ├── gui/            # PySide6 GUI Interface
-│   └── interface.py    # Main GUI application
+│   └── main_window.py  # Main GUI application
 ├── src/            # Source code modules
 │   ├── connect.py      # Database connection utilities
 │   ├── data_from_api.py # API client for data retrieval
@@ -96,7 +96,7 @@ ETL/
 ├── tests/          # Test files and demonstrations
 │   ├── test_*.py           # Various test modules
 │   └── run_tests.py        # Test runner script
-├── demo_gui.py     # GUI demonstration script
+├── run_gui.py      # GUI launcher with demo information
 ├── data_model.md   # Mermaid ER diagram documentation
 ├── .venv/          # Virtual environment (not tracked in git)
 ├── .gitignore      # Git ignore rules
@@ -125,11 +125,13 @@ python-dotenv>=1.0.0          # Environment configuration
 
 # GUI framework
 PySide6>=6.10.0               # Modern Qt6 interface
-qt-material                    # Material design themes
+qt-material>=2.17             # Material design themes
 
 # Optional (fallback)
 mysql-connector-python>=9.5.0  # Alternative MySQL driver
 ```
+
+> **Important**: If you have multiple Python installations, use `python -m pip install` instead of just `pip install` to ensure packages are installed in the correct Python environment.
 
 ### Installation
 
@@ -156,8 +158,8 @@ source .venv/bin/activate
 # Install all dependencies at once
 pip install -r requirements.txt
 
-# Or install individually
-pip install pandas mysql-connector-python requests python-dotenv PySide6
+# Or install individually (recommended for multiple Python installations)
+python -m pip install PySide6 pandas PyMySQL requests python-dotenv qt-material cryptography
 ```
 
 4. Configure database connection:
@@ -176,12 +178,17 @@ DB_NAME=store_manager
 
 ### Option 1: GUI Interface (Recommended)
 ```bash
-# Launch the modern PySide6 GUI interface
-python demo_gui.py
+# Launch with demo information and usage guide
+python run_gui.py
 
-# Direct GUI launch (alternative)
-python gui/interface.py
+# Direct GUI launch (no demo information)
+python gui/main_window.py
 ```
+
+> **Note**: If you encounter "No module named 'PySide6'" errors, install the required packages:
+> ```bash
+> python -m pip install PySide6 pandas PyMySQL requests python-dotenv qt-material cryptography
+> ```
 
 ### Option 2: Command Line (Advanced)
 ```bash
@@ -198,11 +205,11 @@ cd tests && python run_tests.py
 Launch the modern PySide6 interface for easy ETL management:
 
 ```bash
-# Start the GUI interface
-python gui/interface.py
+# Start the GUI interface with demo information
+python run_gui.py
 
-# Or run the demo
-python demo_gui.py 
+# Or launch GUI directly
+python gui/main_window.py 
 ```
 
 ### Current Status: ✅ FULLY OPERATIONAL
@@ -398,8 +405,8 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 ## 🚀 Quick Command Reference
 ```bash
 # GUI Interface (Recommended)
-python gui/interface.py          # Launch GUI interface
-python demo_gui.py               # Run GUI demo with instructions
+python run_gui.py               # Launch with demo information and usage guide
+python gui/main_window.py        # Direct GUI launch (no demo info)
 
 # Command Line Interface
 python src/db_manager.py --help  # Show all available options
@@ -410,6 +417,21 @@ python src/db_manager.py --api-streaming # Streaming insertion for large data
 
 # Testing
 cd tests && python run_tests.py  # Run all core functionality tests
+```
+
+## 🔧 Troubleshooting Multiple Python Installations
+
+If you encounter module import errors, you likely have multiple Python installations:
+
+```bash
+# Check which Python you're using
+python -c "import sys; print(sys.executable)"
+
+# Use python -m pip instead of pip to install in the correct Python
+python -m pip install PySide6
+
+# Test if PySide6 is available
+python -c "import PySide6; print('PySide6 works!')"
 ```
 
 ## 🔧 Recent Fixes & Updates
@@ -447,5 +469,11 @@ cd tests && python run_tests.py  # Run all core functionality tests
 • Implementation: `sys.dont_write_bytecode = True`
 • Result: Clean project directory
 
+### Multiple Python Installations - RESOLVED ✅ (October 30, 2025)
+• Issue: Multiple Python installations causing PySide6 import errors
+• Root Cause: Microsoft Store Python vs. regular Python installations with different packages
+• Solution: Installed PySide6 and dependencies in default Python using `python -m pip install`
+• Result: Simple `python gui/main_window.py` command now works reliably
+
 ---
-Last updated: October 29, 2025 - All major issues resolved, ETL pipeline fully operational
+Last updated: October 30, 2025 - All major issues resolved, ETL pipeline fully operational
