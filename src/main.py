@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pandas as pd
 from connect import config, logger
-from db_manager import DatabaseManager
+from database.db_manager import DatabaseManager
 
 DATA_DIR = Path(__file__).parent.parent / 'data'
 

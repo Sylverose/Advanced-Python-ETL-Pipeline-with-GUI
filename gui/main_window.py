@@ -38,6 +38,11 @@ API_PATH = DATA_PATH / "API"
 # Add the src directory to the path to import our modules
 sys.path.insert(0, str(SRC_PATH))
 
+# Also add the gui directory itself so imports like `from themes import ...` work
+GUI_PATH = Path(__file__).parent
+if str(GUI_PATH) not in sys.path:
+    sys.path.insert(0, str(GUI_PATH))
+
 # Import cache cleaner
 from cache_cleaner import CacheCleaner
 
@@ -47,9 +52,9 @@ from themes import ThemeManager
 # Module imports with graceful error handling
 MODULES_AVAILABLE = True
 try:
-    from db_manager import DatabaseManager
+    from database.db_manager import DatabaseManager
     from connect import mysql_connection, config
-    from data_from_api import APIClient
+    from database.data_from_api import APIDataFetcher as APIClient  # Compatibility alias
 except ImportError as e:
     print(f"Warning: Could not import ETL modules: {e}")
     MODULES_AVAILABLE = False
@@ -99,12 +104,14 @@ class ETLWorker(QThread):
     def _test_connection(self):
         """Test database connection"""
         self.progress.emit("Testing database connection...")
-        db_manager = DatabaseManager()
-        with mysql_connection(config) as conn:
-            if conn and not self._is_cancelled:
+        try:
+            db_manager = DatabaseManager()
+            if db_manager.test_connection() and not self._is_cancelled:
                 self.finished.emit("Database connection successful!")
             else:
                 self.error.emit("Failed to connect to database")
+        except Exception as e:
+            self.error.emit(f"Database connection error: {str(e)}")
     
     def _test_api(self):
         """Test API connection"""
@@ -247,7 +254,8 @@ class ETLMainWindow(QMainWindow):
         """Clean application cache on startup"""
         try:
             cache_cleaner = CacheCleaner()
-            cache_cleaner.clean_all(verbose=False)
+            # Only clean cache files, not logs (they may be in use)
+            cache_cleaner.clean_all(verbose=False, clean_logs=False)
         except Exception as e:
             print(f"Warning: Cache cleanup failed: {e}")
     
@@ -338,7 +346,7 @@ class ETLMainWindow(QMainWindow):
         api_layout = QHBoxLayout(api_group)
         
         self.api_url_input = QLineEdit()
-        self.api_url_input.setPlaceholderText("Enter API URL (e.g., https://etl-server.fly.dev)")
+        self.api_url_input.setPlaceholderText("Enter API URL (e.g., https://etl-server.fly.dev or https://jsonplaceholder.typicode.com)")
         self.api_url_input.setText(self.settings.value("api_url", "https://etl-server.fly.dev"))
         self.api_url_input.setStyleSheet("""
             QLineEdit {

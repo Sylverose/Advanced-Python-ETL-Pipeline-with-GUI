@@ -4,7 +4,7 @@ import os
 import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
-from db_manager import DatabaseManager
+from database.db_manager import DatabaseManager
 
 def test_csv_access():
     print("Testing CSV file access after reorganization...")

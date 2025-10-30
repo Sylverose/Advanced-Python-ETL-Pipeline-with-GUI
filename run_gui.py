@@ -73,14 +73,18 @@ def main():
 
 if __name__ == "__main__":
     try:
-        # Try to launch the GUI
-        print("Attempting to launch GUI interface...")
-        
+        # CRITICAL: Add paths BEFORE any GUI imports so module-level imports work
+        src_path = os.path.join(current_dir, 'src')
+        if src_path not in sys.path:
+            sys.path.insert(0, src_path)
+
         # Add gui directory to Python path to fix themes import
         gui_path = os.path.join(current_dir, 'gui')
         if gui_path not in sys.path:
             sys.path.insert(0, gui_path)
         
+        # Try to launch the GUI
+        print("Attempting to launch GUI interface...")
         from gui.main_window import main as gui_main
         
         # Show demo info first

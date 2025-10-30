@@ -4,8 +4,8 @@ import os
 import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
-from data_from_api import APIClient
-from db_manager import DatabaseManager, create_api_tables_and_csv
+from database.data_from_api import APIClient
+from database.db_manager import DatabaseManager, create_api_tables_and_csv
 
 def test_api_csv_export():
     """Test the API CSV export functionality."""

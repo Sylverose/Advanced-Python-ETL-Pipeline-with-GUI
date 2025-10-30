@@ -22,18 +22,24 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-# MySQL connection configuration
-config = {
-    'user': os.getenv('DB_USER', 'root'),        # Uses 'root' as default if DB_USER not set
-    'password': os.getenv('DB_PASSWORD', ''),     # Empty string as default
-    'host': os.getenv('DB_HOST', '127.0.0.1'),   # Uses localhost as default
-    'database': os.getenv('DB_NAME', 'store_manager'),     # Uses 'store_manager' as default
-    'port': int(os.getenv('DB_PORT', '3306'))    # MySQL default port
-}
-
-# Add mysql-connector specific settings if using that driver
-if MYSQL_CONNECTOR_AVAILABLE:
-    config['raise_on_warnings'] = True
+# Import structured configuration
+try:
+    from config import get_config
+    _etl_config = get_config()
+    config = _etl_config.database.to_dict()
+except ImportError:
+    # Fallback to environment variables if config module not available
+    config = {
+        'user': os.getenv('DB_USER', 'root'),
+        'password': os.getenv('DB_PASSWORD', ''),
+        'host': os.getenv('DB_HOST', '127.0.0.1'),
+        'database': os.getenv('DB_NAME', 'store_manager'),
+        'port': int(os.getenv('DB_PORT', '3306'))
+    }
+    
+    # Add mysql-connector specific settings if using that driver
+    if MYSQL_CONNECTOR_AVAILABLE:
+        config['raise_on_warnings'] = True
 
 # Set up minimal logging
 logger = logging.getLogger(__name__)
