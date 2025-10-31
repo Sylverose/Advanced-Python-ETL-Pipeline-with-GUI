@@ -1,6 +1,5 @@
 """
-Enhanced Database Manager - compact version with reduced code duplication.
-Maintains compatibility with existing ETL pipeline while dramatically reducing code size.
+Database Manager 
 """
 
 import logging
