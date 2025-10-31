@@ -382,7 +382,7 @@ class ETLMainWindow(QMainWindow):
         self.select_csv_btn = QPushButton("Select CSV Files")
         self.select_csv_btn.clicked.connect(self.select_csv_files)
         
-        self.load_selected_files_btn = QPushButton("Load Selected Files")
+        self.load_selected_files_btn = QPushButton("Load CSV Files")
         self.load_selected_files_btn.setObjectName("load_selected_files_btn")
         self.load_selected_files_btn.clicked.connect(self.load_selected_files)
         self.load_selected_files_btn.setEnabled(False)
@@ -547,6 +547,9 @@ class ETLMainWindow(QMainWindow):
         else:
             self.append_output("WARNING: ETL modules not available - limited functionality")
             self._disable_etl_buttons()
+        
+        # Ensure Load API Data button is always enabled
+        self.load_api_data_btn.setEnabled(True)
     
     def _apply_theme(self):
         """Apply current theme using theme manager"""
@@ -638,12 +641,20 @@ class ETLMainWindow(QMainWindow):
     
     def _set_buttons_enabled(self, enabled: bool):
         """Enable/disable operation buttons"""
-        buttons = [self.test_conn_btn, self.create_tables_btn, self.load_csv_btn, 
-                  self.load_api_data_btn, self.load_api_btn, self.test_csv_btn, 
-                  self.test_api_export_btn, self.select_csv_btn, self.load_selected_files_btn]
-        for button in buttons:
-            if MODULES_AVAILABLE or button in [self.select_csv_btn, self.load_selected_files_btn]:
+        # Main operation buttons (always controlled by this method)
+        main_buttons = [self.test_conn_btn, self.create_tables_btn, self.load_csv_btn, 
+                       self.load_api_data_btn, self.load_api_btn, self.test_csv_btn, 
+                       self.test_api_export_btn, self.select_csv_btn]
+        
+        for button in main_buttons:
+            if MODULES_AVAILABLE or button == self.select_csv_btn:
                 button.setEnabled(enabled)
+        
+        # CSV Load button has special logic - only enable if files are selected
+        if enabled:
+            self.load_selected_files_btn.setEnabled(len(self.selected_csv_files) > 0)
+        else:
+            self.load_selected_files_btn.setEnabled(False)
     
     def _on_operation_finished(self, operation_name: str, message: str):
         """Handle operation completion"""
@@ -703,13 +714,55 @@ class ETLMainWindow(QMainWindow):
         self._start_operation("load_csv", operation_name="CSV Data Loading")
     
     def load_api_data(self):
-        """Load API data"""
+        """Load API data from API and save to CSV"""
         api_url = self.api_url_input.text().strip()
+        
         if not api_url:
-            self.show_error("Input Error", "Please enter an API URL")
+            self.show_error("Input Error", "Please enter your company's API URL")
             return
         
-        self._start_operation("load_api", api_url, operation_name="API Data Loading")
+        self.append_output(f"Loading API data from: {api_url}")
+        
+        try:
+            from database.data_from_api import APIDataFetcher
+            import os
+            
+            # Create API directory
+            api_dir = "data/API"
+            os.makedirs(api_dir, exist_ok=True)
+            
+            # Create API client and discover endpoints
+            self.append_output("Connecting to API and discovering endpoints...")
+            api_client = APIDataFetcher(api_url)
+            
+            # Discover what endpoints are available
+            available_endpoints = api_client.discover_endpoints()
+            if available_endpoints:
+                self.append_output(f"Found {len(available_endpoints)} endpoints:")
+                for endpoint in available_endpoints:
+                    self.append_output(f"  - {endpoint}")
+            else:
+                self.append_output("No standard endpoints found. Trying direct fetch...")
+            
+            # Fetch and save data
+            self.append_output("Fetching data and saving to CSV...")
+            success = api_client.save_all_api_data_to_csv(api_dir)
+            
+            api_client.close()
+            
+            if success:
+                # List the files created
+                from pathlib import Path
+                api_path = Path(api_dir)
+                csv_files = list(api_path.glob("*.csv"))
+                self.append_output(f"SUCCESS: Created {len(csv_files)} CSV files in {api_dir}")
+                for file in csv_files:
+                    self.append_output(f"  - {file.name}: {file.stat().st_size:,} bytes")
+            else:
+                self.append_output("No data was retrieved from the API")
+                
+        except Exception as e:
+            self.append_output(f"Error loading API data: {str(e)}")
     
     def select_csv_files(self):
         """Select CSV files"""

@@ -1151,3 +1151,693 @@
 2025-10-30 20:06:36 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
 2025-10-30 20:06:36 | INFO     | no-corre | database.data_from_api | Sync fetch from /orders: 1615 records
 2025-10-30 20:06:36 | INFO     | no-corre | database.data_from_api | Fetched 1615 records from orders
+2025-10-31 07:16:19 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:16:21 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-10-31 07:16:21 | INFO     | no-corre | database.data_from_api | Sync fetch from /orders: 1615 records
+2025-10-31 07:16:21 | INFO     | no-corre | database.data_from_api | Fetched 1615 records from orders
+2025-10-31 07:16:35 | INFO     | no-corre | etl.database         | Starting table creation
+2025-10-31 07:16:35 | INFO     | no-corre | etl.database         | Created table: brands
+2025-10-31 07:16:35 | INFO     | no-corre | etl.database         | Created table: categories
+2025-10-31 07:16:35 | INFO     | no-corre | etl.database         | Created table: stores
+2025-10-31 07:16:35 | INFO     | no-corre | etl.database         | Created table: staffs
+2025-10-31 07:16:35 | INFO     | no-corre | etl.database         | Created table: products
+2025-10-31 07:16:35 | INFO     | no-corre | etl.database         | Created table: stocks
+2025-10-31 07:16:35 | INFO     | no-corre | etl.database         | Created table: orders
+2025-10-31 07:16:35 | INFO     | no-corre | etl.database         | Created table: order_items
+2025-10-31 07:16:35 | INFO     | no-corre | etl.database         | Created table: customers
+2025-10-31 07:16:35 | INFO     | no-corre | etl.database         | Completed table creation
+2025-10-31 07:17:06 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:17:06 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-10-31 07:17:06 | INFO     | no-corre | database.data_from_api | Sync fetch from /orders: 1615 records
+2025-10-31 07:17:06 | INFO     | no-corre | database.data_from_api | Fetched 1615 records from orders
+2025-10-31 07:20:21 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:20:21 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-10-31 07:20:21 | INFO     | no-corre | database.data_from_api | Sync fetch from /orders: 1615 records
+2025-10-31 07:20:21 | INFO     | no-corre | database.data_from_api | Fetched 1615 records from orders
+2025-10-31 07:20:28 | WARNING  | no-corre | database.data_from_api | Async fetch failed, using sync: Async client not available
+2025-10-31 07:20:28 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:20:28 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /users HTTP/1.1" 404 0
+2025-10-31 07:20:28 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /users (404)
+2025-10-31 07:20:28 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:20:29 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /posts HTTP/1.1" 404 0
+2025-10-31 07:20:29 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /posts (404)
+2025-10-31 07:20:29 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:20:29 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /comments HTTP/1.1" 404 0
+2025-10-31 07:20:29 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /comments (404)
+2025-10-31 07:20:29 | WARNING  | no-corre | database.data_from_api | No data to export for users
+2025-10-31 07:20:29 | WARNING  | no-corre | database.data_from_api | No data to export for posts
+2025-10-31 07:20:29 | WARNING  | no-corre | database.data_from_api | No data to export for comments
+2025-10-31 07:20:40 | WARNING  | no-corre | database.data_from_api | Async fetch failed, using sync: Async client not available
+2025-10-31 07:20:40 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-10-31 07:20:40 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /users HTTP/1.1" 200 1847
+2025-10-31 07:20:40 | INFO     | no-corre | database.data_from_api | Sync fetch from /users: 10 records
+2025-10-31 07:20:40 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-10-31 07:20:40 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /posts HTTP/1.1" 200 None
+2025-10-31 07:20:40 | INFO     | no-corre | database.data_from_api | Sync fetch from /posts: 100 records
+2025-10-31 07:20:40 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-10-31 07:20:41 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /comments HTTP/1.1" 200 None
+2025-10-31 07:20:41 | INFO     | no-corre | database.data_from_api | Sync fetch from /comments: 500 records
+2025-10-31 07:20:41 | INFO     | no-corre | database.data_from_api | Exported 10 users records to C:\Users\SPAC-O-3\AppData\Local\Temp\tmpkwz6sx64\users.csv
+2025-10-31 07:20:41 | INFO     | no-corre | database.data_from_api | Exported 100 posts records to C:\Users\SPAC-O-3\AppData\Local\Temp\tmpkwz6sx64\posts.csv
+2025-10-31 07:20:41 | INFO     | no-corre | database.data_from_api | Exported 500 comments records to C:\Users\SPAC-O-3\AppData\Local\Temp\tmpkwz6sx64\comments.csv
+2025-10-31 07:21:10 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:21:11 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-10-31 07:21:11 | INFO     | no-corre | database.data_from_api | Sync fetch from /orders: 1615 records
+2025-10-31 07:21:11 | INFO     | no-corre | database.data_from_api | Fetched 1615 records from orders
+2025-10-31 07:21:23 | WARNING  | no-corre | database.data_from_api | Async fetch failed, using sync: Async client not available
+2025-10-31 07:21:23 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:21:24 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /users HTTP/1.1" 404 0
+2025-10-31 07:21:24 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /users (404)
+2025-10-31 07:21:24 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:21:24 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /posts HTTP/1.1" 404 0
+2025-10-31 07:21:24 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /posts (404)
+2025-10-31 07:21:24 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:21:25 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /comments HTTP/1.1" 404 0
+2025-10-31 07:21:25 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /comments (404)
+2025-10-31 07:21:25 | WARNING  | no-corre | database.data_from_api | No data to export for users
+2025-10-31 07:21:25 | WARNING  | no-corre | database.data_from_api | No data to export for posts
+2025-10-31 07:21:25 | WARNING  | no-corre | database.data_from_api | No data to export for comments
+2025-10-31 07:22:14 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-10-31 07:22:14 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /users HTTP/1.1" 200 1847
+2025-10-31 07:22:14 | INFO     | no-corre | database.data_from_api | Sync fetch from /users: 10 records
+2025-10-31 07:22:14 | INFO     | no-corre | database.data_from_api | Fetched 10 records from users
+2025-10-31 07:22:14 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-10-31 07:22:15 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /comments HTTP/1.1" 200 None
+2025-10-31 07:22:15 | INFO     | no-corre | database.data_from_api | Sync fetch from /comments: 500 records
+2025-10-31 07:22:15 | INFO     | no-corre | database.data_from_api | Fetched 500 records from comments
+2025-10-31 07:22:15 | WARNING  | no-corre | database.data_from_api | Async fetch failed, using sync: Async client not available
+2025-10-31 07:22:15 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-10-31 07:22:15 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /users HTTP/1.1" 200 1847
+2025-10-31 07:22:15 | INFO     | no-corre | database.data_from_api | Sync fetch from /users: 10 records
+2025-10-31 07:22:15 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-10-31 07:22:15 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /posts HTTP/1.1" 200 None
+2025-10-31 07:22:15 | INFO     | no-corre | database.data_from_api | Sync fetch from /posts: 100 records
+2025-10-31 07:22:15 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-10-31 07:22:16 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /comments HTTP/1.1" 200 None
+2025-10-31 07:22:16 | INFO     | no-corre | database.data_from_api | Sync fetch from /comments: 500 records
+2025-10-31 07:22:34 | WARNING  | no-corre | database.data_from_api | Async fetch failed, using sync: Async client not available
+2025-10-31 07:22:34 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-10-31 07:22:35 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /users HTTP/1.1" 200 1847
+2025-10-31 07:22:35 | INFO     | no-corre | database.data_from_api | Sync fetch from /users: 10 records
+2025-10-31 07:22:35 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-10-31 07:22:35 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /posts HTTP/1.1" 200 None
+2025-10-31 07:22:35 | INFO     | no-corre | database.data_from_api | Sync fetch from /posts: 100 records
+2025-10-31 07:22:35 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-10-31 07:22:36 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /comments HTTP/1.1" 200 None
+2025-10-31 07:22:36 | INFO     | no-corre | database.data_from_api | Sync fetch from /comments: 500 records
+2025-10-31 07:22:36 | INFO     | no-corre | database.data_from_api | Exported 10 users records to data/API\users.csv
+2025-10-31 07:22:36 | INFO     | no-corre | database.data_from_api | Exported 100 posts records to data/API\posts.csv
+2025-10-31 07:22:36 | INFO     | no-corre | database.data_from_api | Exported 500 comments records to data/API\comments.csv
+2025-10-31 07:23:25 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:23:27 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-10-31 07:23:27 | INFO     | no-corre | database.data_from_api | Sync fetch from /orders: 1615 records
+2025-10-31 07:23:27 | INFO     | no-corre | database.data_from_api | Fetched 1615 records from orders
+2025-10-31 07:23:29 | WARNING  | no-corre | database.data_from_api | Async fetch failed, using sync: Async client not available
+2025-10-31 07:23:29 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:23:31 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /users HTTP/1.1" 404 0
+2025-10-31 07:23:31 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /users (404)
+2025-10-31 07:23:31 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:23:32 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /posts HTTP/1.1" 404 0
+2025-10-31 07:23:32 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /posts (404)
+2025-10-31 07:23:32 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:23:32 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /comments HTTP/1.1" 404 0
+2025-10-31 07:23:32 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /comments (404)
+2025-10-31 07:23:32 | WARNING  | no-corre | database.data_from_api | No data to export for users
+2025-10-31 07:23:32 | WARNING  | no-corre | database.data_from_api | No data to export for posts
+2025-10-31 07:23:32 | WARNING  | no-corre | database.data_from_api | No data to export for comments
+2025-10-31 07:26:28 | WARNING  | no-corre | database.data_from_api | Async fetch failed, using sync: Async client not available
+2025-10-31 07:26:28 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-10-31 07:26:28 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /users HTTP/1.1" 200 1847
+2025-10-31 07:26:28 | INFO     | no-corre | database.data_from_api | Sync fetch from /users: 10 records
+2025-10-31 07:26:28 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-10-31 07:26:29 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /posts HTTP/1.1" 200 None
+2025-10-31 07:26:29 | INFO     | no-corre | database.data_from_api | Sync fetch from /posts: 100 records
+2025-10-31 07:26:29 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-10-31 07:26:29 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /comments HTTP/1.1" 200 None
+2025-10-31 07:26:29 | INFO     | no-corre | database.data_from_api | Sync fetch from /comments: 500 records
+2025-10-31 07:26:29 | INFO     | no-corre | database.data_from_api | Exported 10 users records to data\API\users.csv
+2025-10-31 07:26:29 | INFO     | no-corre | database.data_from_api | Exported 100 posts records to data\API\posts.csv
+2025-10-31 07:26:29 | INFO     | no-corre | database.data_from_api | Exported 500 comments records to data\API\comments.csv
+2025-10-31 07:28:15 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:28:15 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-10-31 07:28:15 | INFO     | no-corre | database.data_from_api | Sync fetch from /orders: 1615 records
+2025-10-31 07:28:15 | INFO     | no-corre | database.data_from_api | Fetched 1615 records from orders
+2025-10-31 07:28:20 | WARNING  | no-corre | database.data_from_api | Async fetch failed, using sync: Async client not available
+2025-10-31 07:28:20 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:28:20 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /users HTTP/1.1" 404 0
+2025-10-31 07:28:20 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /users (404)
+2025-10-31 07:28:20 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:28:20 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /posts HTTP/1.1" 404 0
+2025-10-31 07:28:20 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /posts (404)
+2025-10-31 07:28:20 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:28:21 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /comments HTTP/1.1" 404 0
+2025-10-31 07:28:21 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /comments (404)
+2025-10-31 07:28:21 | WARNING  | no-corre | database.data_from_api | No data to export for users
+2025-10-31 07:28:21 | WARNING  | no-corre | database.data_from_api | No data to export for posts
+2025-10-31 07:28:21 | WARNING  | no-corre | database.data_from_api | No data to export for comments
+2025-10-31 07:31:43 | WARNING  | no-corre | database.data_from_api | Async fetch failed, using sync: Async client not available
+2025-10-31 07:31:43 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-10-31 07:31:44 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /users HTTP/1.1" 200 1847
+2025-10-31 07:31:44 | INFO     | no-corre | database.data_from_api | Sync fetch from /users: 10 records
+2025-10-31 07:31:44 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-10-31 07:31:44 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /posts HTTP/1.1" 200 None
+2025-10-31 07:31:44 | INFO     | no-corre | database.data_from_api | Sync fetch from /posts: 100 records
+2025-10-31 07:31:44 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-10-31 07:31:44 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /comments HTTP/1.1" 200 None
+2025-10-31 07:31:44 | INFO     | no-corre | database.data_from_api | Sync fetch from /comments: 500 records
+2025-10-31 07:31:44 | INFO     | no-corre | database.data_from_api | Exported 10 users records to data\API\users.csv
+2025-10-31 07:31:44 | INFO     | no-corre | database.data_from_api | Exported 100 posts records to data\API\posts.csv
+2025-10-31 07:31:44 | INFO     | no-corre | database.data_from_api | Exported 500 comments records to data\API\comments.csv
+2025-10-31 07:32:12 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:32:13 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-10-31 07:32:13 | INFO     | no-corre | database.data_from_api | Sync fetch from /orders: 1615 records
+2025-10-31 07:32:13 | INFO     | no-corre | database.data_from_api | Fetched 1615 records from orders
+2025-10-31 07:32:14 | WARNING  | no-corre | database.data_from_api | Async fetch failed, using sync: Async client not available
+2025-10-31 07:32:14 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:32:15 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /users HTTP/1.1" 404 0
+2025-10-31 07:32:15 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /users (404)
+2025-10-31 07:32:15 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:32:15 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /posts HTTP/1.1" 404 0
+2025-10-31 07:32:15 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /posts (404)
+2025-10-31 07:32:15 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:32:15 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /comments HTTP/1.1" 404 0
+2025-10-31 07:32:15 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /comments (404)
+2025-10-31 07:32:15 | WARNING  | no-corre | database.data_from_api | No data to export for users
+2025-10-31 07:32:15 | WARNING  | no-corre | database.data_from_api | No data to export for posts
+2025-10-31 07:32:15 | WARNING  | no-corre | database.data_from_api | No data to export for comments
+2025-10-31 07:32:29 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:32:29 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-10-31 07:32:29 | INFO     | no-corre | database.data_from_api | Sync fetch from /orders: 1615 records
+2025-10-31 07:32:29 | INFO     | no-corre | database.data_from_api | Fetched 1615 records from orders
+2025-10-31 07:32:30 | WARNING  | no-corre | database.data_from_api | Async fetch failed, using sync: Async client not available
+2025-10-31 07:32:30 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:32:31 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /users HTTP/1.1" 404 0
+2025-10-31 07:32:31 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /users (404)
+2025-10-31 07:32:31 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:32:31 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /posts HTTP/1.1" 404 0
+2025-10-31 07:32:31 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /posts (404)
+2025-10-31 07:32:31 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:32:31 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /comments HTTP/1.1" 404 0
+2025-10-31 07:32:31 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /comments (404)
+2025-10-31 07:32:31 | WARNING  | no-corre | database.data_from_api | No data to export for users
+2025-10-31 07:32:31 | WARNING  | no-corre | database.data_from_api | No data to export for posts
+2025-10-31 07:32:31 | WARNING  | no-corre | database.data_from_api | No data to export for comments
+2025-10-31 07:32:33 | WARNING  | no-corre | database.data_from_api | Async fetch failed, using sync: Async client not available
+2025-10-31 07:32:33 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:32:33 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /users HTTP/1.1" 404 0
+2025-10-31 07:32:33 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /users (404)
+2025-10-31 07:32:33 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:32:33 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /posts HTTP/1.1" 404 0
+2025-10-31 07:32:33 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /posts (404)
+2025-10-31 07:32:33 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:32:34 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /comments HTTP/1.1" 404 0
+2025-10-31 07:32:34 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /comments (404)
+2025-10-31 07:32:34 | WARNING  | no-corre | database.data_from_api | No data to export for users
+2025-10-31 07:32:34 | WARNING  | no-corre | database.data_from_api | No data to export for posts
+2025-10-31 07:32:34 | WARNING  | no-corre | database.data_from_api | No data to export for comments
+2025-10-31 07:32:39 | WARNING  | no-corre | database.data_from_api | Async fetch failed, using sync: Async client not available
+2025-10-31 07:32:39 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:32:40 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /users HTTP/1.1" 404 0
+2025-10-31 07:32:40 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /users (404)
+2025-10-31 07:32:40 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:32:40 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /posts HTTP/1.1" 404 0
+2025-10-31 07:32:40 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /posts (404)
+2025-10-31 07:32:40 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:32:41 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /comments HTTP/1.1" 404 0
+2025-10-31 07:32:41 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /comments (404)
+2025-10-31 07:32:41 | WARNING  | no-corre | database.data_from_api | No data to export for users
+2025-10-31 07:32:41 | WARNING  | no-corre | database.data_from_api | No data to export for posts
+2025-10-31 07:32:41 | WARNING  | no-corre | database.data_from_api | No data to export for comments
+2025-10-31 07:34:16 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-10-31 07:34:16 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /users HTTP/1.1" 200 1847
+2025-10-31 07:34:16 | INFO     | no-corre | database.data_from_api | Sync fetch from /users: 10 records
+2025-10-31 07:34:16 | INFO     | no-corre | database.data_from_api | Fetched 10 records from users
+2025-10-31 07:34:16 | WARNING  | no-corre | database.data_from_api | Async fetch failed, using sync: Async client not available
+2025-10-31 07:34:16 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-10-31 07:34:16 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /users HTTP/1.1" 200 1847
+2025-10-31 07:34:16 | INFO     | no-corre | database.data_from_api | Sync fetch from /users: 10 records
+2025-10-31 07:34:16 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-10-31 07:34:17 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /posts HTTP/1.1" 200 None
+2025-10-31 07:34:17 | INFO     | no-corre | database.data_from_api | Sync fetch from /posts: 100 records
+2025-10-31 07:34:17 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-10-31 07:34:17 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /comments HTTP/1.1" 200 None
+2025-10-31 07:34:17 | INFO     | no-corre | database.data_from_api | Sync fetch from /comments: 500 records
+2025-10-31 07:34:17 | INFO     | no-corre | database.data_from_api | Exported 10 users records to data\API\users.csv
+2025-10-31 07:34:17 | INFO     | no-corre | database.data_from_api | Exported 100 posts records to data\API\posts.csv
+2025-10-31 07:34:17 | INFO     | no-corre | database.data_from_api | Exported 500 comments records to data\API\comments.csv
+2025-10-31 07:35:46 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:35:46 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-10-31 07:35:46 | INFO     | no-corre | database.data_from_api | Sync fetch from /orders: 1615 records
+2025-10-31 07:35:46 | INFO     | no-corre | database.data_from_api | Fetched 1615 records from orders
+2025-10-31 07:35:49 | WARNING  | no-corre | database.data_from_api | Async fetch failed, using sync: Async client not available
+2025-10-31 07:35:49 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:35:49 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /users HTTP/1.1" 404 0
+2025-10-31 07:35:49 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /users (404)
+2025-10-31 07:35:49 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:35:49 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /posts HTTP/1.1" 404 0
+2025-10-31 07:35:49 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /posts (404)
+2025-10-31 07:35:49 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:35:50 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /comments HTTP/1.1" 404 0
+2025-10-31 07:35:50 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /comments (404)
+2025-10-31 07:35:50 | WARNING  | no-corre | database.data_from_api | No data to export for users
+2025-10-31 07:35:50 | WARNING  | no-corre | database.data_from_api | No data to export for posts
+2025-10-31 07:35:50 | WARNING  | no-corre | database.data_from_api | No data to export for comments
+2025-10-31 07:36:59 | WARNING  | no-corre | database.data_from_api | Async fetch failed, using sync: Async client not available
+2025-10-31 07:36:59 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:37:00 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /users HTTP/1.1" 404 0
+2025-10-31 07:37:00 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /users (404)
+2025-10-31 07:37:00 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:37:00 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /posts HTTP/1.1" 404 0
+2025-10-31 07:37:00 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /posts (404)
+2025-10-31 07:37:00 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:37:00 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /comments HTTP/1.1" 404 0
+2025-10-31 07:37:00 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /comments (404)
+2025-10-31 07:37:00 | WARNING  | no-corre | database.data_from_api | No data to export for users
+2025-10-31 07:37:00 | WARNING  | no-corre | database.data_from_api | No data to export for posts
+2025-10-31 07:37:00 | WARNING  | no-corre | database.data_from_api | No data to export for comments
+2025-10-31 07:38:44 | WARNING  | no-corre | database.data_from_api | Async fetch failed, using sync: Async client not available
+2025-10-31 07:38:44 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:38:45 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /users HTTP/1.1" 404 0
+2025-10-31 07:38:45 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /users (404)
+2025-10-31 07:38:45 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:38:45 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /posts HTTP/1.1" 404 0
+2025-10-31 07:38:45 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /posts (404)
+2025-10-31 07:38:45 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:38:45 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /comments HTTP/1.1" 404 0
+2025-10-31 07:38:45 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /comments (404)
+2025-10-31 07:38:45 | WARNING  | no-corre | database.data_from_api | No data to export for users
+2025-10-31 07:38:45 | WARNING  | no-corre | database.data_from_api | No data to export for posts
+2025-10-31 07:38:45 | WARNING  | no-corre | database.data_from_api | No data to export for comments
+2025-10-31 07:38:53 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:38:54 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-10-31 07:38:54 | INFO     | no-corre | database.data_from_api | Sync fetch from /orders: 1615 records
+2025-10-31 07:38:54 | INFO     | no-corre | database.data_from_api | Fetched 1615 records from orders
+2025-10-31 07:38:58 | WARNING  | no-corre | database.data_from_api | Async fetch failed, using sync: Async client not available
+2025-10-31 07:38:58 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:38:58 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /users HTTP/1.1" 404 0
+2025-10-31 07:38:58 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /users (404)
+2025-10-31 07:38:58 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:38:59 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /posts HTTP/1.1" 404 0
+2025-10-31 07:38:59 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /posts (404)
+2025-10-31 07:38:59 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:38:59 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /comments HTTP/1.1" 404 0
+2025-10-31 07:38:59 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /comments (404)
+2025-10-31 07:38:59 | WARNING  | no-corre | database.data_from_api | No data to export for users
+2025-10-31 07:38:59 | WARNING  | no-corre | database.data_from_api | No data to export for posts
+2025-10-31 07:38:59 | WARNING  | no-corre | database.data_from_api | No data to export for comments
+2025-10-31 07:40:04 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:40:04 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-10-31 07:40:04 | INFO     | no-corre | database.data_from_api | Sync fetch from /orders: 1615 records
+2025-10-31 07:40:04 | INFO     | no-corre | database.data_from_api | Fetched 1615 records from orders
+2025-10-31 07:40:07 | WARNING  | no-corre | database.data_from_api | Async fetch failed, using sync: Async client not available
+2025-10-31 07:40:07 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:40:07 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /users HTTP/1.1" 404 0
+2025-10-31 07:40:07 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /users (404)
+2025-10-31 07:40:07 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:40:07 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /posts HTTP/1.1" 404 0
+2025-10-31 07:40:07 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /posts (404)
+2025-10-31 07:40:07 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:40:08 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /comments HTTP/1.1" 404 0
+2025-10-31 07:40:08 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /comments (404)
+2025-10-31 07:40:08 | WARNING  | no-corre | database.data_from_api | No data to export for users
+2025-10-31 07:40:08 | WARNING  | no-corre | database.data_from_api | No data to export for posts
+2025-10-31 07:40:08 | WARNING  | no-corre | database.data_from_api | No data to export for comments
+2025-10-31 07:40:19 | WARNING  | no-corre | database.data_from_api | Async fetch failed, using sync: Async client not available
+2025-10-31 07:40:19 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:40:19 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /users HTTP/1.1" 404 0
+2025-10-31 07:40:19 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /users (404)
+2025-10-31 07:40:19 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:40:19 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /posts HTTP/1.1" 404 0
+2025-10-31 07:40:19 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /posts (404)
+2025-10-31 07:40:19 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:40:20 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /comments HTTP/1.1" 404 0
+2025-10-31 07:40:20 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /comments (404)
+2025-10-31 07:40:20 | WARNING  | no-corre | database.data_from_api | No data to export for users
+2025-10-31 07:40:20 | WARNING  | no-corre | database.data_from_api | No data to export for posts
+2025-10-31 07:40:20 | WARNING  | no-corre | database.data_from_api | No data to export for comments
+2025-10-31 07:41:05 | WARNING  | no-corre | database.data_from_api | Async fetch failed, using sync: Async client not available
+2025-10-31 07:41:05 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-10-31 07:41:05 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /users HTTP/1.1" 200 1847
+2025-10-31 07:41:05 | INFO     | no-corre | database.data_from_api | Sync fetch from /users: 10 records
+2025-10-31 07:41:05 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-10-31 07:41:06 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /posts HTTP/1.1" 200 None
+2025-10-31 07:41:06 | INFO     | no-corre | database.data_from_api | Sync fetch from /posts: 100 records
+2025-10-31 07:41:06 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-10-31 07:41:06 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /comments HTTP/1.1" 200 None
+2025-10-31 07:41:06 | INFO     | no-corre | database.data_from_api | Sync fetch from /comments: 500 records
+2025-10-31 07:41:06 | INFO     | no-corre | database.data_from_api | Exported 10 users records to data/API\users.csv
+2025-10-31 07:41:06 | INFO     | no-corre | database.data_from_api | Exported 100 posts records to data/API\posts.csv
+2025-10-31 07:41:06 | INFO     | no-corre | database.data_from_api | Exported 500 comments records to data/API\comments.csv
+2025-10-31 07:41:51 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:41:51 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-10-31 07:41:51 | INFO     | no-corre | database.data_from_api | Sync fetch from /orders: 1615 records
+2025-10-31 07:41:51 | INFO     | no-corre | database.data_from_api | Fetched 1615 records from orders
+2025-10-31 07:41:52 | WARNING  | no-corre | database.data_from_api | Async fetch failed, using sync: Async client not available
+2025-10-31 07:41:52 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:41:53 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /users HTTP/1.1" 404 0
+2025-10-31 07:41:53 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /users (404)
+2025-10-31 07:41:53 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:41:53 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /posts HTTP/1.1" 404 0
+2025-10-31 07:41:53 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /posts (404)
+2025-10-31 07:41:53 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:41:53 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /comments HTTP/1.1" 404 0
+2025-10-31 07:41:53 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /comments (404)
+2025-10-31 07:41:53 | WARNING  | no-corre | database.data_from_api | No data to export for users
+2025-10-31 07:41:53 | WARNING  | no-corre | database.data_from_api | No data to export for posts
+2025-10-31 07:41:53 | WARNING  | no-corre | database.data_from_api | No data to export for comments
+2025-10-31 07:43:31 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:43:31 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-10-31 07:43:31 | INFO     | no-corre | database.data_from_api | Sync fetch from /orders: 1615 records
+2025-10-31 07:43:31 | INFO     | no-corre | database.data_from_api | Fetched 1615 records from orders
+2025-10-31 07:43:33 | WARNING  | no-corre | database.data_from_api | Async fetch failed, using sync: Async client not available
+2025-10-31 07:43:33 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:43:33 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /users HTTP/1.1" 404 0
+2025-10-31 07:43:33 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /users (404)
+2025-10-31 07:43:33 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:43:34 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /posts HTTP/1.1" 404 0
+2025-10-31 07:43:34 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /posts (404)
+2025-10-31 07:43:34 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:43:34 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /comments HTTP/1.1" 404 0
+2025-10-31 07:43:34 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /comments (404)
+2025-10-31 07:43:34 | WARNING  | no-corre | database.data_from_api | No data to export for users
+2025-10-31 07:43:34 | WARNING  | no-corre | database.data_from_api | No data to export for posts
+2025-10-31 07:43:34 | WARNING  | no-corre | database.data_from_api | No data to export for comments
+2025-10-31 07:44:00 | WARNING  | no-corre | database.data_from_api | Async fetch failed, using sync: Async client not available
+2025-10-31 07:44:00 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:44:01 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /users HTTP/1.1" 404 0
+2025-10-31 07:44:01 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /users (404)
+2025-10-31 07:44:01 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:44:01 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /posts HTTP/1.1" 404 0
+2025-10-31 07:44:01 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /posts (404)
+2025-10-31 07:44:01 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:44:01 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /comments HTTP/1.1" 404 0
+2025-10-31 07:44:01 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /comments (404)
+2025-10-31 07:44:01 | WARNING  | no-corre | database.data_from_api | No data to export for users
+2025-10-31 07:44:01 | WARNING  | no-corre | database.data_from_api | No data to export for posts
+2025-10-31 07:44:01 | WARNING  | no-corre | database.data_from_api | No data to export for comments
+2025-10-31 07:44:22 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-10-31 07:44:23 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /posts HTTP/1.1" 200 None
+2025-10-31 07:44:23 | INFO     | no-corre | database.data_from_api | Sync fetch from /posts: 100 records
+2025-10-31 07:44:23 | INFO     | no-corre | database.data_from_api | Fetched 100 records from orders
+2025-10-31 07:44:26 | WARNING  | no-corre | database.data_from_api | Async fetch failed, using sync: Async client not available
+2025-10-31 07:44:27 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-10-31 07:44:27 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /users HTTP/1.1" 200 1847
+2025-10-31 07:44:27 | INFO     | no-corre | database.data_from_api | Sync fetch from /users: 10 records
+2025-10-31 07:44:27 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-10-31 07:44:27 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /posts HTTP/1.1" 200 None
+2025-10-31 07:44:27 | INFO     | no-corre | database.data_from_api | Sync fetch from /posts: 100 records
+2025-10-31 07:44:27 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-10-31 07:44:27 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /comments HTTP/1.1" 200 None
+2025-10-31 07:44:27 | INFO     | no-corre | database.data_from_api | Sync fetch from /comments: 500 records
+2025-10-31 07:44:28 | INFO     | no-corre | database.data_from_api | Exported 10 users records to data/API\users.csv
+2025-10-31 07:44:28 | INFO     | no-corre | database.data_from_api | Exported 100 posts records to data/API\posts.csv
+2025-10-31 07:44:28 | INFO     | no-corre | database.data_from_api | Exported 500 comments records to data/API\comments.csv
+2025-10-31 07:48:28 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:48:28 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-10-31 07:48:28 | INFO     | no-corre | database.data_from_api | Sync fetch from /orders: 1615 records
+2025-10-31 07:48:28 | INFO     | no-corre | database.data_from_api | Fetched 1615 records from orders
+2025-10-31 07:48:31 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:48:31 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /users HTTP/1.1" 404 0
+2025-10-31 07:48:31 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /users (404)
+2025-10-31 07:48:31 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:48:32 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /posts HTTP/1.1" 404 0
+2025-10-31 07:48:32 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /posts (404)
+2025-10-31 07:48:32 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:48:32 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /comments HTTP/1.1" 404 0
+2025-10-31 07:48:32 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /comments (404)
+2025-10-31 07:48:32 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:48:32 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-10-31 07:48:32 | INFO     | no-corre | database.data_from_api | Sync fetch from /orders: 1615 records
+2025-10-31 07:48:32 | INFO     | no-corre | database.data_from_api | Found endpoint /orders: 1615 records
+2025-10-31 07:48:32 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:48:33 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /customers HTTP/1.1" 200 None
+2025-10-31 07:48:33 | INFO     | no-corre | database.data_from_api | Sync fetch from /customers: 1445 records
+2025-10-31 07:48:33 | INFO     | no-corre | database.data_from_api | Found endpoint /customers: 1445 records
+2025-10-31 07:48:33 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:48:33 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /products HTTP/1.1" 404 0
+2025-10-31 07:48:33 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /products (404)
+2025-10-31 07:48:33 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:48:34 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /order_items HTTP/1.1" 200 None
+2025-10-31 07:48:34 | INFO     | no-corre | database.data_from_api | Sync fetch from /order_items: 4722 records
+2025-10-31 07:48:34 | INFO     | no-corre | database.data_from_api | Found endpoint /order_items: 4722 records
+2025-10-31 07:48:34 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:48:34 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /data HTTP/1.1" 404 0
+2025-10-31 07:48:34 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /data (404)
+2025-10-31 07:48:34 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:48:34 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /items HTTP/1.1" 404 0
+2025-10-31 07:48:34 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /items (404)
+2025-10-31 07:48:34 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:48:35 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /records HTTP/1.1" 404 0
+2025-10-31 07:48:35 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /records (404)
+2025-10-31 07:48:35 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:48:35 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /entries HTTP/1.1" 404 0
+2025-10-31 07:48:35 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /entries (404)
+2025-10-31 07:48:35 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:48:35 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-10-31 07:48:36 | INFO     | no-corre | database.data_from_api | Sync fetch from /orders: 1615 records
+2025-10-31 07:48:36 | INFO     | no-corre | database.data_from_api | Successfully fetched 1615 records from /orders
+2025-10-31 07:48:36 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:48:36 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /customers HTTP/1.1" 200 None
+2025-10-31 07:48:36 | INFO     | no-corre | database.data_from_api | Sync fetch from /customers: 1445 records
+2025-10-31 07:48:36 | INFO     | no-corre | database.data_from_api | Successfully fetched 1445 records from /customers
+2025-10-31 07:48:36 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:48:36 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /order_items HTTP/1.1" 200 None
+2025-10-31 07:48:36 | INFO     | no-corre | database.data_from_api | Sync fetch from /order_items: 4722 records
+2025-10-31 07:48:36 | INFO     | no-corre | database.data_from_api | Successfully fetched 4722 records from /order_items
+2025-10-31 07:48:36 | INFO     | no-corre | database.data_from_api | Exported 1615 orders records to data/API\orders.csv
+2025-10-31 07:48:36 | INFO     | no-corre | database.data_from_api | Exported 1445 customers records to data/API\customers.csv
+2025-10-31 07:48:37 | INFO     | no-corre | database.data_from_api | Exported 4722 order_items records to data/API\order_items.csv
+2025-10-31 07:49:41 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:49:41 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-10-31 07:49:41 | INFO     | no-corre | database.data_from_api | Sync fetch from /orders: 1615 records
+2025-10-31 07:49:41 | INFO     | no-corre | database.data_from_api | Fetched 1615 records from orders
+2025-10-31 07:49:48 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:49:49 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /users HTTP/1.1" 404 0
+2025-10-31 07:49:49 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /users (404)
+2025-10-31 07:49:49 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:49:49 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /posts HTTP/1.1" 404 0
+2025-10-31 07:49:49 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /posts (404)
+2025-10-31 07:49:49 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:49:49 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /comments HTTP/1.1" 404 0
+2025-10-31 07:49:49 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /comments (404)
+2025-10-31 07:49:49 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:49:50 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-10-31 07:49:50 | INFO     | no-corre | database.data_from_api | Sync fetch from /orders: 1615 records
+2025-10-31 07:49:50 | INFO     | no-corre | database.data_from_api | Found endpoint /orders: 1615 records
+2025-10-31 07:49:50 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:49:50 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /customers HTTP/1.1" 200 None
+2025-10-31 07:49:50 | INFO     | no-corre | database.data_from_api | Sync fetch from /customers: 1445 records
+2025-10-31 07:49:50 | INFO     | no-corre | database.data_from_api | Found endpoint /customers: 1445 records
+2025-10-31 07:49:50 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:49:51 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /products HTTP/1.1" 404 0
+2025-10-31 07:49:51 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /products (404)
+2025-10-31 07:49:51 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:49:51 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /order_items HTTP/1.1" 200 None
+2025-10-31 07:49:51 | INFO     | no-corre | database.data_from_api | Sync fetch from /order_items: 4722 records
+2025-10-31 07:49:51 | INFO     | no-corre | database.data_from_api | Found endpoint /order_items: 4722 records
+2025-10-31 07:49:51 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:49:51 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /data HTTP/1.1" 404 0
+2025-10-31 07:49:51 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /data (404)
+2025-10-31 07:49:51 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:49:52 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /items HTTP/1.1" 404 0
+2025-10-31 07:49:52 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /items (404)
+2025-10-31 07:49:52 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:49:52 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /records HTTP/1.1" 404 0
+2025-10-31 07:49:52 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /records (404)
+2025-10-31 07:49:52 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:49:52 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /entries HTTP/1.1" 404 0
+2025-10-31 07:49:52 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /entries (404)
+2025-10-31 07:49:52 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:49:53 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-10-31 07:49:53 | INFO     | no-corre | database.data_from_api | Sync fetch from /orders: 1615 records
+2025-10-31 07:49:53 | INFO     | no-corre | database.data_from_api | Successfully fetched 1615 records from /orders
+2025-10-31 07:49:53 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:49:53 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /customers HTTP/1.1" 200 None
+2025-10-31 07:49:53 | INFO     | no-corre | database.data_from_api | Sync fetch from /customers: 1445 records
+2025-10-31 07:49:53 | INFO     | no-corre | database.data_from_api | Successfully fetched 1445 records from /customers
+2025-10-31 07:49:53 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:49:54 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /order_items HTTP/1.1" 200 None
+2025-10-31 07:49:54 | INFO     | no-corre | database.data_from_api | Sync fetch from /order_items: 4722 records
+2025-10-31 07:49:54 | INFO     | no-corre | database.data_from_api | Successfully fetched 4722 records from /order_items
+2025-10-31 07:49:54 | INFO     | no-corre | database.data_from_api | Exported 1615 orders records to data/API\orders.csv
+2025-10-31 07:49:54 | INFO     | no-corre | database.data_from_api | Exported 1445 customers records to data/API\customers.csv
+2025-10-31 07:49:54 | INFO     | no-corre | database.data_from_api | Exported 4722 order_items records to data/API\order_items.csv
+2025-10-31 07:50:26 | INFO     | no-corre | etl.database         | Starting table creation
+2025-10-31 07:50:26 | INFO     | no-corre | etl.database         | Created table: brands
+2025-10-31 07:50:26 | INFO     | no-corre | etl.database         | Created table: categories
+2025-10-31 07:50:26 | INFO     | no-corre | etl.database         | Created table: stores
+2025-10-31 07:50:26 | INFO     | no-corre | etl.database         | Created table: staffs
+2025-10-31 07:50:26 | INFO     | no-corre | etl.database         | Created table: products
+2025-10-31 07:50:26 | INFO     | no-corre | etl.database         | Created table: stocks
+2025-10-31 07:50:26 | INFO     | no-corre | etl.database         | Created table: orders
+2025-10-31 07:50:26 | INFO     | no-corre | etl.database         | Created table: order_items
+2025-10-31 07:50:26 | INFO     | no-corre | etl.database         | Created table: customers
+2025-10-31 07:50:26 | INFO     | no-corre | etl.database         | Completed table creation
+2025-10-31 07:51:40 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:51:40 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-10-31 07:51:40 | INFO     | no-corre | database.data_from_api | Sync fetch from /orders: 1615 records
+2025-10-31 07:51:40 | INFO     | no-corre | database.data_from_api | Fetched 1615 records from orders
+2025-10-31 07:52:05 | INFO     | no-corre | etl.database         | Starting table creation
+2025-10-31 07:52:05 | INFO     | no-corre | etl.database         | Created table: brands
+2025-10-31 07:52:05 | INFO     | no-corre | etl.database         | Created table: categories
+2025-10-31 07:52:05 | INFO     | no-corre | etl.database         | Created table: stores
+2025-10-31 07:52:05 | INFO     | no-corre | etl.database         | Created table: staffs
+2025-10-31 07:52:05 | INFO     | no-corre | etl.database         | Created table: products
+2025-10-31 07:52:05 | INFO     | no-corre | etl.database         | Created table: stocks
+2025-10-31 07:52:05 | INFO     | no-corre | etl.database         | Created table: orders
+2025-10-31 07:52:05 | INFO     | no-corre | etl.database         | Created table: order_items
+2025-10-31 07:52:05 | INFO     | no-corre | etl.database         | Created table: customers
+2025-10-31 07:52:05 | INFO     | no-corre | etl.database         | Completed table creation
+2025-10-31 07:52:19 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:52:20 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /users HTTP/1.1" 404 0
+2025-10-31 07:52:20 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /users (404)
+2025-10-31 07:52:20 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:52:20 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /posts HTTP/1.1" 404 0
+2025-10-31 07:52:20 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /posts (404)
+2025-10-31 07:52:20 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:52:20 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /comments HTTP/1.1" 404 0
+2025-10-31 07:52:20 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /comments (404)
+2025-10-31 07:52:20 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:52:21 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-10-31 07:52:21 | INFO     | no-corre | database.data_from_api | Sync fetch from /orders: 1615 records
+2025-10-31 07:52:21 | INFO     | no-corre | database.data_from_api | Found endpoint /orders: 1615 records
+2025-10-31 07:52:21 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:52:21 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /customers HTTP/1.1" 200 None
+2025-10-31 07:52:21 | INFO     | no-corre | database.data_from_api | Sync fetch from /customers: 1445 records
+2025-10-31 07:52:21 | INFO     | no-corre | database.data_from_api | Found endpoint /customers: 1445 records
+2025-10-31 07:52:21 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:52:21 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /products HTTP/1.1" 404 0
+2025-10-31 07:52:21 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /products (404)
+2025-10-31 07:52:21 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:52:22 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /order_items HTTP/1.1" 200 None
+2025-10-31 07:52:22 | INFO     | no-corre | database.data_from_api | Sync fetch from /order_items: 4722 records
+2025-10-31 07:52:22 | INFO     | no-corre | database.data_from_api | Found endpoint /order_items: 4722 records
+2025-10-31 07:52:22 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:52:22 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /data HTTP/1.1" 404 0
+2025-10-31 07:52:22 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /data (404)
+2025-10-31 07:52:22 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:52:23 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /items HTTP/1.1" 404 0
+2025-10-31 07:52:23 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /items (404)
+2025-10-31 07:52:23 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:52:23 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /records HTTP/1.1" 404 0
+2025-10-31 07:52:23 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /records (404)
+2025-10-31 07:52:23 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:52:23 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /entries HTTP/1.1" 404 0
+2025-10-31 07:52:23 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /entries (404)
+2025-10-31 07:52:23 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:52:24 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-10-31 07:52:24 | INFO     | no-corre | database.data_from_api | Sync fetch from /orders: 1615 records
+2025-10-31 07:52:24 | INFO     | no-corre | database.data_from_api | Successfully fetched 1615 records from /orders
+2025-10-31 07:52:24 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:52:24 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /customers HTTP/1.1" 200 None
+2025-10-31 07:52:24 | INFO     | no-corre | database.data_from_api | Sync fetch from /customers: 1445 records
+2025-10-31 07:52:24 | INFO     | no-corre | database.data_from_api | Successfully fetched 1445 records from /customers
+2025-10-31 07:52:24 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:52:25 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /order_items HTTP/1.1" 200 None
+2025-10-31 07:52:25 | INFO     | no-corre | database.data_from_api | Sync fetch from /order_items: 4722 records
+2025-10-31 07:52:25 | INFO     | no-corre | database.data_from_api | Successfully fetched 4722 records from /order_items
+2025-10-31 07:52:25 | INFO     | no-corre | database.data_from_api | Exported 1615 orders records to data/API\orders.csv
+2025-10-31 07:52:25 | INFO     | no-corre | database.data_from_api | Exported 1445 customers records to data/API\customers.csv
+2025-10-31 07:52:25 | INFO     | no-corre | database.data_from_api | Exported 4722 order_items records to data/API\order_items.csv
+2025-10-31 07:52:32 | INFO     | no-corre | etl.database         | Starting table creation
+2025-10-31 07:52:32 | INFO     | no-corre | etl.database         | Created table: brands
+2025-10-31 07:52:32 | INFO     | no-corre | etl.database         | Created table: categories
+2025-10-31 07:52:32 | INFO     | no-corre | etl.database         | Created table: stores
+2025-10-31 07:52:32 | INFO     | no-corre | etl.database         | Created table: staffs
+2025-10-31 07:52:32 | INFO     | no-corre | etl.database         | Created table: products
+2025-10-31 07:52:32 | INFO     | no-corre | etl.database         | Created table: stocks
+2025-10-31 07:52:32 | INFO     | no-corre | etl.database         | Created table: orders
+2025-10-31 07:52:32 | INFO     | no-corre | etl.database         | Created table: order_items
+2025-10-31 07:52:32 | INFO     | no-corre | etl.database         | Created table: customers
+2025-10-31 07:52:32 | INFO     | no-corre | etl.database         | Completed table creation
+2025-10-31 07:52:45 | INFO     | no-corre | database.pandas_optimizer | Read and optimized C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\CSV\brands.csv: (9, 2)
+2025-10-31 07:52:45 | INFO     | no-corre | database.pandas_optimizer | Read and optimized C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\CSV\categories.csv: (7, 2)
+2025-10-31 07:52:45 | INFO     | no-corre | database.pandas_optimizer | Read and optimized C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\CSV\stores.csv: (3, 7)
+2025-10-31 07:52:46 | INFO     | no-corre | database.pandas_optimizer | Read and optimized C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\CSV\staffs.csv: (10, 8)
+2025-10-31 07:52:46 | INFO     | no-corre | database.pandas_optimizer | Read and optimized C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\CSV\products.csv: (321, 6)
+2025-10-31 07:52:46 | INFO     | no-corre | database.pandas_optimizer | Read and optimized C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\CSV\stocks.csv: (939, 3)
+2025-10-31 07:52:48 | INFO     | no-corre | etl.database         | API data export functionality - placeholder implementation
+2025-10-31 07:58:35 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:58:37 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-10-31 07:58:37 | INFO     | no-corre | database.data_from_api | Sync fetch from /orders: 1615 records
+2025-10-31 07:58:37 | INFO     | no-corre | database.data_from_api | Fetched 1615 records from orders
+2025-10-31 07:58:48 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:58:48 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /users HTTP/1.1" 404 0
+2025-10-31 07:58:48 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /users (404)
+2025-10-31 07:58:48 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:58:49 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /posts HTTP/1.1" 404 0
+2025-10-31 07:58:49 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /posts (404)
+2025-10-31 07:58:49 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:58:49 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /comments HTTP/1.1" 404 0
+2025-10-31 07:58:49 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /comments (404)
+2025-10-31 07:58:49 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:58:49 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-10-31 07:58:49 | INFO     | no-corre | database.data_from_api | Sync fetch from /orders: 1615 records
+2025-10-31 07:58:49 | INFO     | no-corre | database.data_from_api | Found endpoint /orders: 1615 records
+2025-10-31 07:58:49 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:58:50 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /customers HTTP/1.1" 200 None
+2025-10-31 07:58:50 | INFO     | no-corre | database.data_from_api | Sync fetch from /customers: 1445 records
+2025-10-31 07:58:50 | INFO     | no-corre | database.data_from_api | Found endpoint /customers: 1445 records
+2025-10-31 07:58:50 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:58:50 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /products HTTP/1.1" 404 0
+2025-10-31 07:58:50 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /products (404)
+2025-10-31 07:58:50 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:58:51 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /order_items HTTP/1.1" 200 None
+2025-10-31 07:58:51 | INFO     | no-corre | database.data_from_api | Sync fetch from /order_items: 4722 records
+2025-10-31 07:58:51 | INFO     | no-corre | database.data_from_api | Found endpoint /order_items: 4722 records
+2025-10-31 07:58:51 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:58:51 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /data HTTP/1.1" 404 0
+2025-10-31 07:58:51 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /data (404)
+2025-10-31 07:58:51 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:58:52 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /items HTTP/1.1" 404 0
+2025-10-31 07:58:52 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /items (404)
+2025-10-31 07:58:52 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:58:52 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /records HTTP/1.1" 404 0
+2025-10-31 07:58:52 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /records (404)
+2025-10-31 07:58:52 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:58:52 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /entries HTTP/1.1" 404 0
+2025-10-31 07:58:52 | DEBUG    | no-corre | database.data_from_api | Endpoint not found: /entries (404)
+2025-10-31 07:58:52 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:58:53 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-10-31 07:58:53 | INFO     | no-corre | database.data_from_api | Sync fetch from /orders: 1615 records
+2025-10-31 07:58:53 | INFO     | no-corre | database.data_from_api | Successfully fetched 1615 records from /orders
+2025-10-31 07:58:53 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:58:53 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /customers HTTP/1.1" 200 None
+2025-10-31 07:58:53 | INFO     | no-corre | database.data_from_api | Sync fetch from /customers: 1445 records
+2025-10-31 07:58:53 | INFO     | no-corre | database.data_from_api | Successfully fetched 1445 records from /customers
+2025-10-31 07:58:53 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-10-31 07:58:54 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /order_items HTTP/1.1" 200 None
+2025-10-31 07:58:54 | INFO     | no-corre | database.data_from_api | Sync fetch from /order_items: 4722 records
+2025-10-31 07:58:54 | INFO     | no-corre | database.data_from_api | Successfully fetched 4722 records from /order_items
+2025-10-31 07:58:54 | INFO     | no-corre | database.data_from_api | Exported 1615 orders records to data/API\orders.csv
+2025-10-31 07:58:54 | INFO     | no-corre | database.data_from_api | Exported 1445 customers records to data/API\customers.csv
+2025-10-31 07:58:54 | INFO     | no-corre | database.data_from_api | Exported 4722 order_items records to data/API\order_items.csv
+2025-10-31 07:59:20 | INFO     | no-corre | etl.database         | Starting table creation
+2025-10-31 07:59:20 | INFO     | no-corre | etl.database         | Created table: brands
+2025-10-31 07:59:20 | INFO     | no-corre | etl.database         | Created table: categories
+2025-10-31 07:59:20 | INFO     | no-corre | etl.database         | Created table: stores
+2025-10-31 07:59:20 | INFO     | no-corre | etl.database         | Created table: staffs
+2025-10-31 07:59:20 | INFO     | no-corre | etl.database         | Created table: products
+2025-10-31 07:59:20 | INFO     | no-corre | etl.database         | Created table: stocks
+2025-10-31 07:59:20 | INFO     | no-corre | etl.database         | Created table: orders
+2025-10-31 07:59:20 | INFO     | no-corre | etl.database         | Created table: order_items
+2025-10-31 07:59:20 | INFO     | no-corre | etl.database         | Created table: customers
+2025-10-31 07:59:20 | INFO     | no-corre | etl.database         | Completed table creation
+2025-10-31 07:59:41 | INFO     | no-corre | etl.database         | Starting table creation
+2025-10-31 07:59:41 | INFO     | no-corre | etl.database         | Created table: brands
+2025-10-31 07:59:41 | INFO     | no-corre | etl.database         | Created table: categories
+2025-10-31 07:59:41 | INFO     | no-corre | etl.database         | Created table: stores
+2025-10-31 07:59:41 | INFO     | no-corre | etl.database         | Created table: staffs
+2025-10-31 07:59:41 | INFO     | no-corre | etl.database         | Created table: products
+2025-10-31 07:59:41 | INFO     | no-corre | etl.database         | Created table: stocks
+2025-10-31 07:59:41 | INFO     | no-corre | etl.database         | Created table: orders
+2025-10-31 07:59:41 | INFO     | no-corre | etl.database         | Created table: order_items
+2025-10-31 07:59:41 | INFO     | no-corre | etl.database         | Created table: customers
+2025-10-31 07:59:41 | INFO     | no-corre | etl.database         | Completed table creation
+2025-10-31 07:59:56 | INFO     | no-corre | database.pandas_optimizer | Read and optimized C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\CSV\brands.csv: (9, 2)
+2025-10-31 07:59:56 | INFO     | no-corre | database.pandas_optimizer | Read and optimized C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\CSV\categories.csv: (7, 2)
+2025-10-31 07:59:56 | INFO     | no-corre | database.pandas_optimizer | Read and optimized C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\CSV\stores.csv: (3, 7)
+2025-10-31 07:59:56 | INFO     | no-corre | database.pandas_optimizer | Read and optimized C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\CSV\staffs.csv: (10, 8)
+2025-10-31 07:59:56 | INFO     | no-corre | database.pandas_optimizer | Read and optimized C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\CSV\products.csv: (321, 6)
+2025-10-31 07:59:56 | INFO     | no-corre | database.pandas_optimizer | Read and optimized C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\CSV\stocks.csv: (939, 3)
+2025-10-31 07:59:58 | INFO     | no-corre | etl.database         | API data export functionality - placeholder implementation

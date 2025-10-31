@@ -155,24 +155,27 @@ class APIDataFetcher:
             return []
     
     def fetch_all_data(self) -> Dict[str, pd.DataFrame]:
-        """Fetch all standard API data and convert to DataFrames."""
-        endpoints = ['/users', '/posts', '/comments']
+        """Fetch all available API data and convert to DataFrames."""
+        # Auto-detect endpoints based on API type
+        if "jsonplaceholder" in self.base_url.lower():
+            endpoints = ['/users', '/posts', '/comments']
+        elif "etl-server.fly.dev" in self.base_url.lower():
+            # Your company's ETL server endpoints
+            endpoints = ['/orders', '/customers', '/order_items']
+        else:
+            # For other APIs, try common business endpoints
+            endpoints = ['/orders', '/customers', '/products', '/order_items']
         
-        try:
-            # Try async first if available
-            if ASYNC_AVAILABLE:
-                loop = asyncio.new_event_loop()
-                asyncio.set_event_loop(loop)
-                raw_data = loop.run_until_complete(self.fetch_async(endpoints))
-                loop.close()
-            else:
-                raise ImportError("Async client not available")
-        except Exception as e:
-            logger.warning(f"Async fetch failed, using sync: {e}")
-            # Fallback to sync
-            raw_data = {}
-            for endpoint in endpoints:
-                raw_data[endpoint] = self.fetch_sync(endpoint)
+        # Fallback to sync fetch
+        raw_data = {}
+        for endpoint in endpoints:
+            try:
+                data = self.fetch_sync(endpoint)
+                if data and len(data) > 0:  # Only add if we got actual data
+                    raw_data[endpoint] = data
+                    logger.info(f"Successfully fetched {len(data)} records from {endpoint}")
+            except Exception as e:
+                logger.warning(f"Could not fetch from {endpoint}: {e}")
         
         # Convert to DataFrames and process
         dataframes = {}
@@ -181,8 +184,6 @@ class APIDataFetcher:
                 df = pd.DataFrame(data)
                 df = self._process_dataframe(df, endpoint)
                 dataframes[endpoint.lstrip('/')] = df
-            else:
-                dataframes[endpoint.lstrip('/')] = pd.DataFrame()
         
         return dataframes
     
@@ -346,6 +347,30 @@ class APIDataFetcher:
         except Exception as e:
             logger.error(f"CSV export failed: {e}")
             return False
+    
+    def save_all_api_data_to_csv(self, output_dir: str = "data/API") -> bool:
+        """Compatibility method for GUI - alias for export_to_csv."""
+        return self.export_to_csv(output_dir)
+    
+    def discover_endpoints(self) -> List[str]:
+        """Discover available endpoints by trying common ones."""
+        common_endpoints = [
+            '/users', '/posts', '/comments',  # JSONPlaceholder
+            '/orders', '/customers', '/products', '/order_items',  # Business API
+            '/data', '/items', '/records', '/entries'  # Generic
+        ]
+        
+        available = []
+        for endpoint in common_endpoints:
+            try:
+                data = self.fetch_sync(endpoint)
+                if data and len(data) > 0:
+                    available.append(endpoint)
+                    logger.info(f"Found endpoint {endpoint}: {len(data)} records")
+            except Exception:
+                pass  # Endpoint not available, skip silently
+        
+        return available
     
     def get_api_stats(self) -> Dict[str, Any]:
         """Get API fetching statistics."""
