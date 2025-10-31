@@ -14,9 +14,39 @@ Professional ETL pipeline with modern PySide6 GUI interface, comprehensive error
 
 ## Requirements
 
-- Python 3.11+ (recommended: 3.13.7)
-- MySQL Server 8.0+
-- Dependencies: `pip install -r requirements.txt`
+### System Requirements
+- **Python**: 3.11+ (recommended: 3.13.7)
+- **MySQL Server**: 8.0+
+
+### Python Dependencies
+**Core ETL Dependencies:**
+```
+pandas>=2.0.0                    # Data processing and transformation
+mysql-connector-python>=8.0.0   # MySQL database connectivity  
+requests>=2.28.0                 # HTTP client for API calls
+python-dotenv>=1.0.0             # Environment configuration
+```
+
+**GUI Dependencies:**
+```
+PySide6>=6.0.0                   # Modern Qt-based GUI framework
+```
+
+**Optional Dependencies:**
+```
+# Memory monitoring (provides better memory usage stats)
+psutil>=5.9.0
+
+# Development dependencies  
+pytest>=7.0.0                   # For extended testing
+black>=22.0.0                   # Code formatting
+flake8>=5.0.0                   # Code linting
+```
+
+**Quick Install:**
+```bash
+pip install -r requirements.txt
+```
 
 ## Installation
 
@@ -86,9 +116,11 @@ ETL/
 │       ├── data_validator.py       # Data validation
 │       ├── data_from_api.py       # API client
 │       └── pandas_optimizer.py    # Pandas operations
-├── tests/          # Test files and demonstrations
-│   ├── test_*.py           # Various test modules
-│   └── run_tests.py        # Test runner script
+├── tests/          # Unit tests and validation
+│   ├── __init__.py         # Test package initialization
+│   ├── run_tests.py        # Test runner and orchestrator
+│   ├── test_api_csv_export.py     # API data export validation
+│   └── test_csv_access.py         # CSV file access and parsing tests
 ├── logs/           # Application logs (auto-generated)
 ├── run_gui.py      # GUI launcher with demo information
 ├── .env.example    # Environment configuration template
