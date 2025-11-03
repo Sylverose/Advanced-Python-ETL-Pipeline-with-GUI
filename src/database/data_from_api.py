@@ -37,7 +37,6 @@ class DataUtils:
         df.columns = [col.lower().replace(' ', '_').replace('-', '_') for col in df.columns]
         return df
 
-# Try to import async client with fallback
 try:
     from ..api import AsyncAPIClient, APIRequest, RequestMethod, RetryConfig
     ASYNC_AVAILABLE = True
@@ -58,7 +57,6 @@ class APIDataFetcher:
         self.retries = retries
         self.stats = DataUtils.create_stats_tracker()
         
-        # Use requests if available
         self.requests = requests if REQUESTS_AVAILABLE else None
         
     async def fetch_async(self, endpoints: List[str]) -> Dict[str, List[Dict]]:
@@ -78,7 +76,6 @@ class APIDataFetcher:
             retry_config=retry_config
         ) as client:
             
-            # Create requests for all endpoints
             requests = [
                 APIRequest(
                     method=RequestMethod.GET,
@@ -88,10 +85,8 @@ class APIDataFetcher:
                 for endpoint in endpoints
             ]
             
-            # Execute all requests concurrently
             results = await client.batch_execute(requests)
             
-            # Process results
             data = {}
             for endpoint, result in zip(endpoints, results):
                 if result.success:
@@ -158,49 +153,56 @@ class APIDataFetcher:
         """Fetch all available API data and convert to DataFrames."""
         # Auto-detect endpoints based on API type
         if "jsonplaceholder" in self.base_url.lower():
-            endpoints = ['/users', '/posts', '/comments']
+            endpoints = {
+                '/users': 'customers',
+                '/posts': 'orders',
+                '/comments': 'order_items'
+            }
         elif "etl-server.fly.dev" in self.base_url.lower():
-            # Your company's ETL server endpoints
-            endpoints = ['/orders', '/customers', '/order_items']
+            endpoints = {
+                '/customers': 'customers',
+                '/orders': 'orders',
+                '/order_items': 'order_items'
+            }
         else:
-            # For other APIs, try common business endpoints
-            endpoints = ['/orders', '/customers', '/products', '/order_items']
+            endpoints = {
+                '/customers': 'customers',
+                '/orders': 'orders',
+                '/order_items': 'order_items'
+            }
         
-        # Fallback to sync fetch
+        # Fetch only the mapped endpoints
         raw_data = {}
-        for endpoint in endpoints:
+        for endpoint, table_name in endpoints.items():
             try:
                 data = self.fetch_sync(endpoint)
-                if data and len(data) > 0:  # Only add if we got actual data
-                    raw_data[endpoint] = data
-                    logger.info(f"Successfully fetched {len(data)} records from {endpoint}")
+                if data and len(data) > 0:
+                    raw_data[table_name] = data
+                    logger.info(f"Successfully fetched {len(data)} records from {endpoint} -> {table_name}")
             except Exception as e:
                 logger.warning(f"Could not fetch from {endpoint}: {e}")
         
-        # Convert to DataFrames and process
         dataframes = {}
-        for endpoint, data in raw_data.items():
+        for table_name, data in raw_data.items():
             if data:
                 df = pd.DataFrame(data)
-                df = self._process_dataframe(df, endpoint)
-                dataframes[endpoint.lstrip('/')] = df
+                df = self._process_dataframe(df, table_name)
+                dataframes[table_name] = df
         
         return dataframes
     
     def _process_dataframe(self, df: pd.DataFrame, endpoint: str) -> pd.DataFrame:
-        """Process and normalize DataFrame based on endpoint."""
+        """Process and normalize DataFrame based on table name."""
         if df.empty:
             return df
         
-        # Normalize column names
         df = DataUtils.normalize_column_names(df)
         
-        # Endpoint-specific processing
-        if 'users' in endpoint:
+        if 'customers' in endpoint or 'users' in endpoint:
             df = self._process_users_data(df)
-        elif 'posts' in endpoint:
+        elif 'orders' in endpoint or 'posts' in endpoint:
             df = self._process_posts_data(df)
-        elif 'comments' in endpoint:
+        elif 'order_items' in endpoint or 'comments' in endpoint:
             df = self._process_comments_data(df)
         
         return df
@@ -330,10 +332,8 @@ class APIDataFetcher:
             import os
             os.makedirs(output_dir, exist_ok=True)
             
-            # Fetch all data
             dataframes = self.fetch_all_data()
             
-            # Export each DataFrame
             for name, df in dataframes.items():
                 if not df.empty:
                     output_path = os.path.join(output_dir, f"{name}.csv")

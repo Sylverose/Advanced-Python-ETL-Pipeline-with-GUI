@@ -52,9 +52,9 @@ from themes import ThemeManager
 # Module imports with graceful error handling
 MODULES_AVAILABLE = True
 try:
-    from database.db_manager import DatabaseManager
-    from connect import mysql_connection, config
-    from database.data_from_api import APIDataFetcher as APIClient  # Compatibility alias
+    from src.database.db_manager import DatabaseManager
+    from src.connect import mysql_connection, config
+    from src.database.data_from_api import APIDataFetcher as APIClient  # Compatibility alias
 except ImportError as e:
     print(f"Warning: Could not import ETL modules: {e}")
     MODULES_AVAILABLE = False
@@ -724,7 +724,7 @@ class ETLMainWindow(QMainWindow):
         self.append_output(f"Loading API data from: {api_url}")
         
         try:
-            from database.data_from_api import APIDataFetcher
+            from src.database.data_from_api import APIDataFetcher
             import os
             
             # Create API directory

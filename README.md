@@ -75,59 +75,95 @@ python src/main.py
 
 ```
 ETL/
-├── data/           # Data storage
-│   ├── CSV/        # Original CSV data sources
-│   ├── API/        # API-generated CSV exports  
-│   ├── data_model.md       # Mermaid ER diagram documentation
-│   └── etl_data_model_diagram.mmd  # Database schema diagram
-├── gui/            # PySide6 GUI Interface
-│   ├── main_window.py      # Main GUI application
-│   └── themes/             # Theme system (dark/light modes)
-├── src/            # Source code modules
-│   ├── connect.py          # Database connection management
-│   ├── cache_cleaner.py    # Cache management
-│   ├── logging_system.py   # Structured logging system
-│   ├── main.py             # Main application entry point
-│   ├── api/                # Async API client package
-│   │   ├── api_client.py   # Core HTTP client
-│   │   ├── api_models.py   # Request/response models
-│   │   ├── rate_limiter.py # Rate limiting functionality
-│   │   ├── retry_handler.py # Retry logic
-│   │   ├── data_processor.py # Response processing
-│   │   └── convenience.py  # Helper functions
-│   ├── exceptions/         # ETL exception handling package
-│   │   ├── base_exceptions.py      # Core exception classes
-│   │   ├── database_exceptions.py  # Database-related errors
-│   │   ├── validation_exceptions.py # Data validation errors
-│   │   ├── api_exceptions.py       # API and HTTP errors
-│   │   ├── processing_exceptions.py # Data processing errors
-│   │   ├── system_exceptions.py    # System and config errors
-│   │   ├── exception_factories.py  # Exception factory functions
-│   │   └── decorators.py          # Exception handling decorators
-│   ├── config/             # Configuration modules
-│   │   ├── api.py          # API configuration
-│   │   ├── database.py     # Database configuration
-│   │   └── environments.py # Environment management
-│   └── database/           # Database modules
-│       ├── __init__.py             # Module exports
-│       ├── db_manager.py           # Core ETL engine
-│       ├── connection_manager.py   # Connection handling
-│       ├── schema_manager.py       # Schema definitions
-│       ├── data_validator.py       # Data validation
-│       ├── data_from_api.py       # API client
-│       └── pandas_optimizer.py    # Pandas operations
-├── tests/          # Unit tests and validation
-│   ├── __init__.py         # Test package initialization
-│   ├── run_tests.py        # Test runner and orchestrator
-│   ├── test_api_csv_export.py     # API data export validation
-│   └── test_csv_access.py         # CSV file access and parsing tests
-├── logs/           # Application logs (auto-generated)
-├── run_gui.py      # GUI launcher with demo information
-├── .env.example    # Environment configuration template
-├── .venv/          # Virtual environment (not tracked in git)
-├── .gitignore      # Git ignore rules
-├── requirements.txt # Dependency specifications
-└── README.md       # This file
+├── data/                          # Data storage
+│   ├── CSV/                       # Original CSV data sources
+│   │   ├── brands.csv
+│   │   ├── categories.csv
+│   │   ├── products.csv
+│   │   ├── staffs.csv
+│   │   ├── stocks.csv
+│   │   └── stores.csv
+│   ├── API/                       # API-generated CSV exports
+│   │   ├── customers.csv
+│   │   ├── order_items.csv
+│   │   └── orders.csv
+│   ├── data_model.md              # Data model documentation
+│   └── etl_data_model_diagram.mmd # ER diagram
+├── gui/                           # PySide6 GUI Interface
+│   ├── main_window.py             # Main application
+│   └── themes/                    # Theme system (dark/light)
+│       ├── __init__.py
+│       ├── base_theme.py
+│       ├── dark_theme.py
+│       ├── light_theme.py
+│       └── theme_manager.py
+├── src/                           # Source modules
+│   ├── connect.py                 # Connection management
+│   ├── cache_cleaner.py           # Cache cleanup
+│   ├── logging_system.py          # Logging infrastructure
+│   ├── main.py                    # Entry point
+│   ├── api/                       # API client package
+│   │   ├── __init__.py
+│   │   ├── api_client.py
+│   │   ├── api_models.py
+│   │   ├── convenience.py
+│   │   ├── data_processor.py
+│   │   ├── rate_limiter.py
+│   │   ├── retry_handler.py
+│   │   └── example_usage.py
+│   ├── config/                    # Configuration
+│   │   ├── __init__.py
+│   │   ├── api.py
+│   │   ├── database.py
+│   │   └── environments.py
+│   ├── exceptions/                # Exception handling
+│   │   ├── __init__.py
+│   │   ├── api_exceptions.py
+│   │   ├── base_exceptions.py
+│   │   ├── database_exceptions.py
+│   │   ├── decorators.py
+│   │   ├── exception_factories.py
+│   │   ├── processing_exceptions.py
+│   │   ├── system_exceptions.py
+│   │   ├── validation_exceptions.py
+│   │   └── example_usage.py
+│   └── database/                  # Database operations
+│       ├── __init__.py
+│       ├── db_manager.py          # Core orchestration
+│       ├── connection_manager.py  # Connection handling
+│       ├── csv_operations.py      # CSV import/export
+│       ├── data_from_api.py       # API data fetching
+│       ├── data_validator.py      # Data validation
+│       ├── pandas_optimizer.py    # Pandas operations
+│       ├── schema_manager.py      # Schema definitions
+│       ├── batch_operations/      # Batch processing
+│       │   ├── __init__.py
+│       │   ├── base_processor.py
+│       │   ├── batch_processor.py
+│       │   ├── delete_processor.py
+│       │   ├── insert_processor.py
+│       │   ├── update_processor.py
+│       │   └── upsert_processor.py
+│       └── utilities/             # Database utilities
+│           ├── __init__.py
+│           ├── config_utils.py
+│           ├── context_managers.py
+│           ├── data_utils.py
+│           ├── database_utils.py
+│           └── operation_stats.py
+├── tests/                         # Test suite
+│   ├── __init__.py
+│   ├── run_tests.py
+│   ├── test_api_csv_export.py
+│   └── test_csv_access.py
+├── logs/                          # Application logs
+│   └── etl_structured.json
+├── .venv/                         # Virtual environment (ignored)
+├── __pycache__/                   # Python cache (ignored)
+├── clean_logs.ps1                 # Log cleanup script
+├── run_gui.py                     # GUI launcher
+├── requirements.txt               # Dependencies
+└── README.md                      # This file
 ```
 
 ## Database Configuration
@@ -146,7 +182,7 @@ The application automatically creates the database and tables if they don't exis
 
 ### System Health
 - **Database Connection**: ✅ Working (PyMySQL with MySQL 8.0+)
-- **Modular Architecture**: ✅ API client and exceptions packages fully modularized
+- **Modular Architecture**: ✅ Organized by concern with clear separation
 - **GUI Interface**: ✅ Professional PySide6 interface with theme system
 - **Data Processing**: ✅ Pandas with proper NaN→NULL conversion for MySQL
 - **API Integration**: ✅ Smart endpoint detection with multiple server support
@@ -156,7 +192,6 @@ The application automatically creates the database and tables if they don't exis
 Launch the modern PySide6 interface for easy ETL management:
 
 ```bash
-# Start the GUI interface  
 python gui/main_window.py
 ```
 
@@ -184,46 +219,34 @@ The ETL Pipeline Manager provides a professional interface with:
 
 ### Database Manager Operations
 ```bash
-# Run the main ETL pipeline
 python src/main.py
-
-# Direct database operations
 python src/database/db_manager.py
-
-# Test database connectivity
 python -c "from src.database.db_manager import DatabaseManager; db = DatabaseManager(); print('Connection:', db.test_connection())"
 ```
 
 ### API Client Usage
 ```bash
-# Test API connectivity
 python -c "from src.database.data_from_api import APIDataFetcher; api = APIDataFetcher('https://jsonplaceholder.typicode.com'); print('Data:', len(api.fetch_data('users')))"
-
-# Export API data to CSV
 python -c "from src.database.data_from_api import export_api_data_to_csv; export_api_data_to_csv()"
 ```
 
 ### Architecture Benefits
 ```
-✅ MODULAR:     API Package → Database Package → Exception Handling
+✅ MODULAR:     Organized by concern with clear interfaces
 ✅ RESILIENT:   Smart endpoint detection with automatic fallbacks  
 ✅ COMPATIBLE:  Works with multiple API server architectures
 ⚡ EFFICIENT:   Direct pandas DataFrame to MySQL with NaN handling
 ```
 
 ### Project Components
-• Extract: Direct API data retrieval with error handling
-• Transform: Pandas-based data cleaning and validation
-• Load: Multiple MySQL insertion strategies for optimal performance
+Extract → Transform → Load architecture for efficient data pipeline
 
 ## 📊 Data Sources
 
 ### API Integration
 - **Smart Endpoint Detection**: Automatically detects and maps API endpoints
 - **Multiple Server Support**: Works with different API architectures
-  - JSONPlaceholder API (`/users`, `/posts`, `/comments`)  
-  - ETL Server API (`/customers`, `/orders`, `/products`)
-- **Fallback Logic**: Tries multiple endpoint variations (`/api/orders`, `/order`, etc.)
+- **Fallback Logic**: Tries multiple endpoint variations
 - **Error Recovery**: Graceful handling of 404s and server errors
 
 ### CSV Data Processing
@@ -231,7 +254,7 @@ python -c "from src.database.data_from_api import export_api_data_to_csv; export
 - **Stores**: Store locations and contact information
 - **Staff**: Employee and management data
 - **Inventory**: Stock levels and availability tracking
-- **NaN Handling**: Automatic conversion of pandas NaN to MySQL NULL
+- **NaN Handling**: Automatic conversion to MySQL NULL
 
 ### MySQL Database Schema
 - **Engine**: InnoDB with foreign key constraints
@@ -243,35 +266,19 @@ python -c "from src.database.data_from_api import export_api_data_to_csv; export
 
 ### Setting Up Development Environment
 1. Follow the installation steps above
-2. Install development dependencies:
-```bash
-pip install -r requirements-dev.txt  # if you have dev dependencies
-```
+2. Install development dependencies as needed
 
 ### Code Structure
-• Place reusable modules in the `src/` directory
-• Keep data processing scripts in the `data/` directory
-• Follow PEP 8 style guidelines
+Place reusable modules in the `src/` directory, keep data processing scripts in the `data/` directory.
 
 ### Testing
-Run comprehensive tests:
 ```bash
-# All tests and demonstrations
 cd tests
 python run_tests.py
-
-# Individual test categories
-python test_simplification.py      # Code improvement validation
-python test_api_direct_mysql.py    # API-to-MySQL method testing
-python api_mysql_examples.py       # Usage examples
-python complete_api_overview.py    # Full capabilities demo
 ```
 
 ## 📋 Configuration
-Create configuration files for different environments:
-
-• `config/dev.ini` - Development settings
-• `config/prod.ini` - Production settings
+Create configuration files for different environments as needed.
 
 Note: Configuration files are ignored by git to protect sensitive information.
 
@@ -287,39 +294,35 @@ DB_NAME=store_manager
 ```
 
 ### Connection Details
-- **Primary Driver**: PyMySQL (with mysql-connector-python fallback)
+- **Primary Driver**: PyMySQL
 - **Database**: `store_manager` (auto-created if missing)
 - **Schema**: 9 tables with proper foreign key relationships
-- **Authentication**: MySQL 8.0+ caching_sha2_password support
 - **Connection Pooling**: Configurable connection management
-- **Error Recovery**: Automatic reconnection with exponential backoff
 
 ### Dependencies Management
 ```
-✅ PyMySQL - Primary MySQL connector
-✅ PySide6 - Modern GUI framework  
-✅ Pandas - Data processing and transformation
-✅ Requests/aiohttp - API client functionality
-✅ Structured exception handling system
+✅ PyMySQL - MySQL connector
+✅ PySide6 - GUI framework  
+✅ Pandas - Data processing
+✅ Requests - API functionality
+✅ Structured exception handling
 ```
 
 ## 📈 Error Handling and Monitoring
 
 ### Exception Management System
-The ETL pipeline features a comprehensive exception handling system:
-
-- **Modular Exception Packages**: Organized by error type (database, API, validation, system)
+- **Modular Exception Packages**: Organized by error type
 - **Smart Error Recovery**: Automatic retry logic with exponential backoff
 - **Contextual Error Information**: Detailed error context with recovery suggestions
 - **Structured Logging**: JSON-structured logs with correlation IDs
 
 ### Monitoring Features
 - **Real-time Progress Tracking**: GUI progress bars and status updates
-- **Performance Metrics**: Memory usage monitoring and optimization suggestions
+- **Performance Metrics**: Memory usage monitoring
 - **Connection Health**: Automatic database and API connectivity monitoring
-- **Data Validation**: Schema validation with detailed mismatch reporting
+- **Data Validation**: Schema validation with detailed reporting
 
-Logs are stored in the `logs/` directory with structured JSON format for easy parsing.
+Logs are stored in the `logs/` directory with structured JSON format.
 
 ## 🤝 Contributing
 1. Fork the repository
@@ -342,42 +345,31 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 
 ### Installation & Setup
 ```bash
-# Install all dependencies
 pip install -r requirements.txt
-
-# Verify installation
 python -c "import PySide6, pandas, pymysql; print('✅ Ready to go!')"
-
-# Configure database connection (create .env file)
 echo "DB_USER=root" > .env
 echo "DB_PASSWORD=your_password" >> .env
 echo "DB_HOST=127.0.0.1" >> .env
 echo "DB_NAME=store_manager" >> .env
 ```
 
-### GUI Interface (Recommended)
+### GUI Interface
 ```bash
-python gui/main_window.py       # Launch modern ETL GUI interface
+python gui/main_window.py
 ```
 
-### Command Line Interface
+### Command Line
 ```bash
-python src/main.py              # Main ETL pipeline entry point
-python src/database/db_manager.py  # Direct database operations
-
-# Test specific components
+python src/main.py
+python src/database/db_manager.py
 python -c "from src.database.db_manager import DatabaseManager; print('DB OK:', DatabaseManager().test_connection())"
 python -c "from src.database.data_from_api import APIDataFetcher; print('API OK:', len(APIDataFetcher().fetch_data('users')) > 0)"
 ```
 
-### Testing & Verification
+### Testing
 ```bash
-cd tests && python run_tests.py  # Run comprehensive test suite
-python src/cache_cleaner.py      # Clean project cache files
-
-# Individual component tests
-python -c "from src.exceptions import ETLException, DatabaseError; print('Exception system loaded')"
-python -c "from src.api import AsyncAPIClient; print('API client loaded')"
+cd tests && python run_tests.py
+python src/cache_cleaner.py
 ```
 
 
