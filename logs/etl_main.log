@@ -2369,3 +2369,235 @@
 2025-11-03 12:07:36 | INFO     | no-corre | src.database.data_from_api | Exported 10 customers records to C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\API\customers.csv
 2025-11-03 12:07:36 | INFO     | no-corre | src.database.data_from_api | Exported 100 orders records to C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\API\orders.csv
 2025-11-03 12:07:36 | INFO     | no-corre | src.database.data_from_api | Exported 500 order_items records to C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\API\order_items.csv
+2025-11-03 13:10:29 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-11-03 13:10:31 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-11-03 13:10:31 | INFO     | no-corre | src.database.data_from_api | Sync fetch from /orders: 1615 records
+2025-11-03 13:10:31 | INFO     | no-corre | src.database.data_from_api | Fetched 1615 records from orders
+2025-11-03 13:31:44 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-11-03 13:31:44 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-11-03 13:31:44 | INFO     | no-corre | src.database.data_from_api | Sync fetch from /orders: 1615 records
+2025-11-03 13:31:44 | INFO     | no-corre | src.database.data_from_api | Fetched 1615 records from orders
+2025-11-03 13:32:07 | INFO     | no-corre | etl.database         | Created 9 tables
+2025-11-03 13:32:07 | WARNING  | no-corre | etl.database         | No CSV files found to import
+2025-11-03 13:32:14 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-11-03 13:32:15 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /users HTTP/1.1" 200 1847
+2025-11-03 13:32:15 | INFO     | no-corre | src.database.data_from_api | Sync fetch from /users: 10 records
+2025-11-03 13:32:15 | INFO     | no-corre | src.database.data_from_api | Successfully fetched 10 records from /users -> customers
+2025-11-03 13:32:15 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-11-03 13:32:15 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /posts HTTP/1.1" 200 None
+2025-11-03 13:32:15 | INFO     | no-corre | src.database.data_from_api | Sync fetch from /posts: 100 records
+2025-11-03 13:32:15 | INFO     | no-corre | src.database.data_from_api | Successfully fetched 100 records from /posts -> orders
+2025-11-03 13:32:15 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-11-03 13:32:15 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /comments HTTP/1.1" 200 None
+2025-11-03 13:32:15 | INFO     | no-corre | src.database.data_from_api | Sync fetch from /comments: 500 records
+2025-11-03 13:32:15 | INFO     | no-corre | src.database.data_from_api | Successfully fetched 500 records from /comments -> order_items
+2025-11-03 13:32:15 | INFO     | no-corre | src.database.data_from_api | Exported 10 customers records to C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\API\customers.csv
+2025-11-03 13:32:15 | INFO     | no-corre | src.database.data_from_api | Exported 100 orders records to C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\API\orders.csv
+2025-11-03 13:32:15 | INFO     | no-corre | src.database.data_from_api | Exported 500 order_items records to C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\API\order_items.csv
+2025-11-03 13:32:19 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-11-03 13:32:19 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /customers HTTP/1.1" 200 None
+2025-11-03 13:32:19 | INFO     | no-corre | src.database.data_from_api | Sync fetch from /customers: 1445 records
+2025-11-03 13:32:19 | INFO     | no-corre | src.database.data_from_api | Successfully fetched 1445 records from /customers -> customers
+2025-11-03 13:32:19 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-11-03 13:32:20 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-11-03 13:32:20 | INFO     | no-corre | src.database.data_from_api | Sync fetch from /orders: 1615 records
+2025-11-03 13:32:20 | INFO     | no-corre | src.database.data_from_api | Successfully fetched 1615 records from /orders -> orders
+2025-11-03 13:32:20 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-11-03 13:32:20 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /order_items HTTP/1.1" 200 None
+2025-11-03 13:32:20 | INFO     | no-corre | src.database.data_from_api | Sync fetch from /order_items: 4722 records
+2025-11-03 13:32:20 | INFO     | no-corre | src.database.data_from_api | Successfully fetched 4722 records from /order_items -> order_items
+2025-11-03 13:32:20 | INFO     | no-corre | src.database.data_from_api | Exported 1445 customers records to C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\API\customers.csv
+2025-11-03 13:32:20 | INFO     | no-corre | src.database.data_from_api | Exported 1615 orders records to C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\API\orders.csv
+2025-11-03 13:32:20 | INFO     | no-corre | src.database.data_from_api | Exported 4722 order_items records to C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\API\order_items.csv
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.db_manager | Database 'store_manager' ready
+2025-11-03 13:32:36 | INFO     | no-corre | etl.database         | Created 9 tables
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.csv_operations | Starting CSV import all
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.csv_operations | Starting CSV import brands
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.batch_operations.base_processor | Starting batch insert to brands
+2025-11-03 13:32:36 | DEBUG    | no-corre | src.database.batch_operations.base_processor | Batch 1 insert: 9 records affected
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.batch_operations.base_processor | Batch insert complete: 9 inserted, 0 failed
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.batch_operations.base_processor | Completed batch insert to brands
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.csv_operations | Completed CSV import brands
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.csv_operations | Starting CSV import categories
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.batch_operations.base_processor | Starting batch insert to categories
+2025-11-03 13:32:36 | DEBUG    | no-corre | src.database.batch_operations.base_processor | Batch 1 insert: 7 records affected
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.batch_operations.base_processor | Batch insert complete: 7 inserted, 0 failed
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.batch_operations.base_processor | Completed batch insert to categories
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.csv_operations | Completed CSV import categories
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.csv_operations | Starting CSV import stores
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.batch_operations.base_processor | Starting batch insert to stores
+2025-11-03 13:32:36 | DEBUG    | no-corre | src.database.batch_operations.base_processor | Batch 1 insert: 3 records affected
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.batch_operations.base_processor | Batch insert complete: 3 inserted, 0 failed
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.batch_operations.base_processor | Completed batch insert to stores
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.csv_operations | Completed CSV import stores
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.csv_operations | Starting CSV import staffs
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.batch_operations.base_processor | Starting batch insert to staffs
+2025-11-03 13:32:36 | DEBUG    | no-corre | src.database.batch_operations.base_processor | Batch 1 insert: 10 records affected
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.batch_operations.base_processor | Batch insert complete: 10 inserted, 0 failed
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.batch_operations.base_processor | Completed batch insert to staffs
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.csv_operations | Completed CSV import staffs
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.csv_operations | Starting CSV import products
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.batch_operations.base_processor | Starting batch insert to products
+2025-11-03 13:32:36 | DEBUG    | no-corre | src.database.batch_operations.base_processor | Batch 1 insert: 321 records affected
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.batch_operations.base_processor | Batch insert complete: 321 inserted, 0 failed
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.batch_operations.base_processor | Completed batch insert to products
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.csv_operations | Completed CSV import products
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.csv_operations | Starting CSV import stocks
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.batch_operations.base_processor | Starting batch insert to stocks
+2025-11-03 13:32:36 | DEBUG    | no-corre | src.database.batch_operations.base_processor | Batch 1 insert: 939 records affected
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.batch_operations.base_processor | Batch insert complete: 939 inserted, 0 failed
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.batch_operations.base_processor | Completed batch insert to stocks
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.csv_operations | Completed CSV import stocks
+2025-11-03 13:32:36 | DEBUG    | no-corre | src.database.csv_operations | Skipping customers - no CSV file available
+2025-11-03 13:32:36 | DEBUG    | no-corre | src.database.csv_operations | Skipping orders - no CSV file available
+2025-11-03 13:32:36 | DEBUG    | no-corre | src.database.csv_operations | Skipping order_items - no CSV file available
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.csv_operations | CSV import complete: 6 tables, 1289 total records
+2025-11-03 13:32:36 | INFO     | no-corre | src.database.csv_operations | Completed CSV import all
+2025-11-03 13:32:36 | INFO     | no-corre | etl.database         | All tables created and CSV data imported successfully
+2025-11-03 13:41:49 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-11-03 13:41:51 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-11-03 13:41:51 | INFO     | no-corre | src.database.data_from_api | Sync fetch from /orders: 1615 records
+2025-11-03 13:41:51 | INFO     | no-corre | src.database.data_from_api | Fetched 1615 records from orders
+2025-11-03 13:42:29 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-11-03 13:42:30 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-11-03 13:42:30 | INFO     | no-corre | src.database.data_from_api | Sync fetch from /orders: 1615 records
+2025-11-03 13:42:30 | INFO     | no-corre | src.database.data_from_api | Fetched 1615 records from orders
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.db_manager | Database 'store_manager' ready
+2025-11-03 13:42:34 | INFO     | no-corre | etl.database         | Created 9 tables
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.csv_operations | Starting CSV import all
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.csv_operations | Starting CSV import brands
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.batch_operations.base_processor | Starting batch insert to brands
+2025-11-03 13:42:34 | DEBUG    | no-corre | src.database.batch_operations.base_processor | Batch 1 insert: 0 records affected
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.batch_operations.base_processor | Batch insert complete: 0 inserted, 0 failed
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.batch_operations.base_processor | Completed batch insert to brands
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.csv_operations | Completed CSV import brands
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.csv_operations | Starting CSV import categories
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.batch_operations.base_processor | Starting batch insert to categories
+2025-11-03 13:42:34 | DEBUG    | no-corre | src.database.batch_operations.base_processor | Batch 1 insert: 0 records affected
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.batch_operations.base_processor | Batch insert complete: 0 inserted, 0 failed
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.batch_operations.base_processor | Completed batch insert to categories
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.csv_operations | Completed CSV import categories
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.csv_operations | Starting CSV import stores
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.batch_operations.base_processor | Starting batch insert to stores
+2025-11-03 13:42:34 | DEBUG    | no-corre | src.database.batch_operations.base_processor | Batch 1 insert: 3 records affected
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.batch_operations.base_processor | Batch insert complete: 3 inserted, 0 failed
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.batch_operations.base_processor | Completed batch insert to stores
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.csv_operations | Completed CSV import stores
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.csv_operations | Starting CSV import staffs
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.batch_operations.base_processor | Starting batch insert to staffs
+2025-11-03 13:42:34 | DEBUG    | no-corre | src.database.batch_operations.base_processor | Batch 1 insert: 10 records affected
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.batch_operations.base_processor | Batch insert complete: 10 inserted, 0 failed
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.batch_operations.base_processor | Completed batch insert to staffs
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.csv_operations | Completed CSV import staffs
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.csv_operations | Starting CSV import products
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.batch_operations.base_processor | Starting batch insert to products
+2025-11-03 13:42:34 | DEBUG    | no-corre | src.database.batch_operations.base_processor | Batch 1 insert: 0 records affected
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.batch_operations.base_processor | Batch insert complete: 0 inserted, 0 failed
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.batch_operations.base_processor | Completed batch insert to products
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.csv_operations | Completed CSV import products
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.csv_operations | Starting CSV import stocks
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.batch_operations.base_processor | Starting batch insert to stocks
+2025-11-03 13:42:34 | DEBUG    | no-corre | src.database.batch_operations.base_processor | Batch 1 insert: 0 records affected
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.batch_operations.base_processor | Batch insert complete: 0 inserted, 0 failed
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.batch_operations.base_processor | Completed batch insert to stocks
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.csv_operations | Completed CSV import stocks
+2025-11-03 13:42:34 | DEBUG    | no-corre | src.database.csv_operations | Skipping customers - no CSV file available
+2025-11-03 13:42:34 | DEBUG    | no-corre | src.database.csv_operations | Skipping orders - no CSV file available
+2025-11-03 13:42:34 | DEBUG    | no-corre | src.database.csv_operations | Skipping order_items - no CSV file available
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.csv_operations | CSV import complete: 2 tables, 13 total records
+2025-11-03 13:42:34 | INFO     | no-corre | src.database.csv_operations | Completed CSV import all
+2025-11-03 13:42:34 | INFO     | no-corre | etl.database         | All tables created and CSV data imported successfully
+2025-11-03 13:42:37 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-11-03 13:42:37 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /users HTTP/1.1" 200 1847
+2025-11-03 13:42:37 | INFO     | no-corre | src.database.data_from_api | Sync fetch from /users: 10 records
+2025-11-03 13:42:37 | INFO     | no-corre | src.database.data_from_api | Successfully fetched 10 records from /users -> customers
+2025-11-03 13:42:37 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-11-03 13:42:38 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /posts HTTP/1.1" 200 None
+2025-11-03 13:42:38 | INFO     | no-corre | src.database.data_from_api | Sync fetch from /posts: 100 records
+2025-11-03 13:42:38 | INFO     | no-corre | src.database.data_from_api | Successfully fetched 100 records from /posts -> orders
+2025-11-03 13:42:38 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
+2025-11-03 13:42:38 | DEBUG    | no-corre | urllib3.connectionpool | https://jsonplaceholder.typicode.com:443 "GET /comments HTTP/1.1" 200 None
+2025-11-03 13:42:38 | INFO     | no-corre | src.database.data_from_api | Sync fetch from /comments: 500 records
+2025-11-03 13:42:38 | INFO     | no-corre | src.database.data_from_api | Successfully fetched 500 records from /comments -> order_items
+2025-11-03 13:42:38 | INFO     | no-corre | src.database.data_from_api | Exported 10 customers records to C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\API\customers.csv
+2025-11-03 13:42:38 | INFO     | no-corre | src.database.data_from_api | Exported 100 orders records to C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\API\orders.csv
+2025-11-03 13:42:38 | INFO     | no-corre | src.database.data_from_api | Exported 500 order_items records to C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\API\order_items.csv
+2025-11-03 13:42:42 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-11-03 13:42:43 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /customers HTTP/1.1" 200 None
+2025-11-03 13:42:43 | INFO     | no-corre | src.database.data_from_api | Sync fetch from /customers: 1445 records
+2025-11-03 13:42:43 | INFO     | no-corre | src.database.data_from_api | Successfully fetched 1445 records from /customers -> customers
+2025-11-03 13:42:43 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-11-03 13:42:43 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-11-03 13:42:43 | INFO     | no-corre | src.database.data_from_api | Sync fetch from /orders: 1615 records
+2025-11-03 13:42:43 | INFO     | no-corre | src.database.data_from_api | Successfully fetched 1615 records from /orders -> orders
+2025-11-03 13:42:43 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-11-03 13:42:44 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /order_items HTTP/1.1" 200 None
+2025-11-03 13:42:44 | INFO     | no-corre | src.database.data_from_api | Sync fetch from /order_items: 4722 records
+2025-11-03 13:42:44 | INFO     | no-corre | src.database.data_from_api | Successfully fetched 4722 records from /order_items -> order_items
+2025-11-03 13:42:44 | INFO     | no-corre | src.database.data_from_api | Exported 1445 customers records to C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\API\customers.csv
+2025-11-03 13:42:44 | INFO     | no-corre | src.database.data_from_api | Exported 1615 orders records to C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\API\orders.csv
+2025-11-03 13:42:44 | INFO     | no-corre | src.database.data_from_api | Exported 4722 order_items records to C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\API\order_items.csv
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.db_manager | Database 'store_manager' ready
+2025-11-03 13:43:27 | INFO     | no-corre | etl.database         | Created 9 tables
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.csv_operations | Starting CSV import all
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.csv_operations | Starting CSV import brands
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.batch_operations.base_processor | Starting batch insert to brands
+2025-11-03 13:43:27 | DEBUG    | no-corre | src.database.batch_operations.base_processor | Batch 1 insert: 9 records affected
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.batch_operations.base_processor | Batch insert complete: 9 inserted, 0 failed
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.batch_operations.base_processor | Completed batch insert to brands
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.csv_operations | Completed CSV import brands
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.csv_operations | Starting CSV import categories
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.batch_operations.base_processor | Starting batch insert to categories
+2025-11-03 13:43:27 | DEBUG    | no-corre | src.database.batch_operations.base_processor | Batch 1 insert: 7 records affected
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.batch_operations.base_processor | Batch insert complete: 7 inserted, 0 failed
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.batch_operations.base_processor | Completed batch insert to categories
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.csv_operations | Completed CSV import categories
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.csv_operations | Starting CSV import stores
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.batch_operations.base_processor | Starting batch insert to stores
+2025-11-03 13:43:27 | DEBUG    | no-corre | src.database.batch_operations.base_processor | Batch 1 insert: 3 records affected
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.batch_operations.base_processor | Batch insert complete: 3 inserted, 0 failed
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.batch_operations.base_processor | Completed batch insert to stores
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.csv_operations | Completed CSV import stores
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.csv_operations | Starting CSV import staffs
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.batch_operations.base_processor | Starting batch insert to staffs
+2025-11-03 13:43:27 | DEBUG    | no-corre | src.database.batch_operations.base_processor | Batch 1 insert: 10 records affected
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.batch_operations.base_processor | Batch insert complete: 10 inserted, 0 failed
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.batch_operations.base_processor | Completed batch insert to staffs
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.csv_operations | Completed CSV import staffs
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.csv_operations | Starting CSV import products
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.batch_operations.base_processor | Starting batch insert to products
+2025-11-03 13:43:27 | DEBUG    | no-corre | src.database.batch_operations.base_processor | Batch 1 insert: 321 records affected
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.batch_operations.base_processor | Batch insert complete: 321 inserted, 0 failed
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.batch_operations.base_processor | Completed batch insert to products
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.csv_operations | Completed CSV import products
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.csv_operations | Starting CSV import stocks
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.batch_operations.base_processor | Starting batch insert to stocks
+2025-11-03 13:43:27 | DEBUG    | no-corre | src.database.batch_operations.base_processor | Batch 1 insert: 939 records affected
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.batch_operations.base_processor | Batch insert complete: 939 inserted, 0 failed
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.batch_operations.base_processor | Completed batch insert to stocks
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.csv_operations | Completed CSV import stocks
+2025-11-03 13:43:27 | DEBUG    | no-corre | src.database.csv_operations | Skipping customers - no CSV file available
+2025-11-03 13:43:27 | DEBUG    | no-corre | src.database.csv_operations | Skipping orders - no CSV file available
+2025-11-03 13:43:27 | DEBUG    | no-corre | src.database.csv_operations | Skipping order_items - no CSV file available
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.csv_operations | CSV import complete: 6 tables, 1289 total records
+2025-11-03 13:43:27 | INFO     | no-corre | src.database.csv_operations | Completed CSV import all
+2025-11-03 13:43:27 | INFO     | no-corre | etl.database         | All tables created and CSV data imported successfully
+2025-11-03 13:43:47 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-11-03 13:43:47 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-11-03 13:43:47 | INFO     | no-corre | src.database.data_from_api | Sync fetch from /orders: 1615 records
+2025-11-03 13:43:47 | INFO     | no-corre | src.database.data_from_api | Fetched 1615 records from orders
+2025-11-03 13:43:48 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-11-03 13:43:48 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /customers HTTP/1.1" 200 None
+2025-11-03 13:43:48 | INFO     | no-corre | src.database.data_from_api | Sync fetch from /customers: 1445 records
+2025-11-03 13:43:48 | INFO     | no-corre | src.database.data_from_api | Successfully fetched 1445 records from /customers -> customers
+2025-11-03 13:43:48 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-11-03 13:43:49 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /orders HTTP/1.1" 200 None
+2025-11-03 13:43:49 | INFO     | no-corre | src.database.data_from_api | Sync fetch from /orders: 1615 records
+2025-11-03 13:43:49 | INFO     | no-corre | src.database.data_from_api | Successfully fetched 1615 records from /orders -> orders
+2025-11-03 13:43:49 | DEBUG    | no-corre | urllib3.connectionpool | Starting new HTTPS connection (1): etl-server.fly.dev:443
+2025-11-03 13:43:49 | DEBUG    | no-corre | urllib3.connectionpool | https://etl-server.fly.dev:443 "GET /order_items HTTP/1.1" 200 None
+2025-11-03 13:43:49 | INFO     | no-corre | src.database.data_from_api | Sync fetch from /order_items: 4722 records
+2025-11-03 13:43:49 | INFO     | no-corre | src.database.data_from_api | Successfully fetched 4722 records from /order_items -> order_items
+2025-11-03 13:43:49 | INFO     | no-corre | src.database.data_from_api | Exported 1445 customers records to C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\API\customers.csv
+2025-11-03 13:43:49 | INFO     | no-corre | src.database.data_from_api | Exported 1615 orders records to C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\API\orders.csv
+2025-11-03 13:43:49 | INFO     | no-corre | src.database.data_from_api | Exported 4722 order_items records to C:\Users\SPAC-O-3\Kode_opgaver\Python\ETL\data\API\order_items.csv

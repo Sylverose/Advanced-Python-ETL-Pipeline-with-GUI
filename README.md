@@ -90,13 +90,18 @@ ETL/
 │   ├── data_model.md              # Data model documentation
 │   └── etl_data_model_diagram.mmd # ER diagram
 ├── gui/                           # PySide6 GUI Interface
-│   ├── main_window.py             # Main application
-│   └── themes/                    # Theme system (dark/light)
+│   ├── main_window.py             # Compatibility wrapper
+│   ├── main_window/               # Modular main window package
+│   │   ├── __init__.py            # Package entry point & main()
+│   │   ├── window.py              # ETLMainWindow class
+│   │   ├── worker.py              # ETLWorker thread
+│   │   └── ui_components.py       # UI creation builders
+│   └── themes/                    # Centralized theme system
 │       ├── __init__.py
-│       ├── base_theme.py
-│       ├── dark_theme.py
-│       ├── light_theme.py
-│       └── theme_manager.py
+│       ├── base_theme.py          # Abstract theme base class
+│       ├── dark_theme.py          # Dark theme
+│       ├── light_theme.py         # Light theme
+│       └── theme_manager.py       # Theme lifecycle management
 ├── src/                           # Source modules
 │   ├── connect.py                 # Connection management
 │   ├── cache_cleaner.py           # Cache cleanup
@@ -192,7 +197,14 @@ The application automatically creates the database and tables if they don't exis
 Launch the modern PySide6 interface for easy ETL management:
 
 ```bash
+# Method 1: Direct package entry point (recommended)
+python -c "from gui.main_window import main; main()"
+
+# Method 2: Via wrapper
 python gui/main_window.py
+
+# Method 3: Direct module execution
+python run_gui.py
 ```
 
 ### Database Schema
@@ -214,6 +226,44 @@ The ETL Pipeline Manager provides a professional interface with:
 | **Testing Suite** | Comprehensive validation tools | API endpoint testing, CSV validation, and connectivity checks |
 | **Theme System** | Professional dark/light themes | Material design themes with proper contrast ratios |
 
+### GUI Architecture
+
+**Modular Design with Separation of Concerns:**
+
+```
+main_window/__init__.py (main() entry point)
+    ↓
+main_window/window.py (ETLMainWindow)
+    ├── UI creation (delegates to ui_components)
+    ├── Event handling & user interactions
+    ├── Settings management
+    └── Operation coordination via ETLWorker
+         ↓
+    main_window/worker.py (ETLWorker thread)
+         ├── _test_connection()      - Database validation
+         ├── _test_api()             - API connectivity
+         ├── _create_tables()        - Schema creation
+         ├── _load_csv()             - CSV data import
+         ├── _load_api()             - API data fetching
+         ├── _select_csv_files()     - File copying
+         ├── _test_csv_access()      - CSV schema validation
+         └── _test_api_export()      - API export validation
+         
+main_window/ui_components.py (Pure component builders)
+    ├── create_title_section()      - Title label
+    ├── create_api_section()        - API input & test button
+    ├── create_file_section()       - File selection
+    ├── create_data_section()       - Data loading
+    ├── create_database_section()   - DB operations
+    ├── create_test_section()       - Test operations
+    ├── create_theme_section()      - Theme toggle
+    ├── create_progress_bar()       - Progress tracking
+    └── create_output_section()     - Output display
+
+themes/light_theme.py & dark_theme.py
+    ├── get_custom_styles()         - qt-material overrides
+    └── get_fallback_styles()       - Fallback CSS
+```
 
 ## 🔧 Command Line Usage
 
@@ -356,6 +406,10 @@ echo "DB_NAME=store_manager" >> .env
 ### GUI Interface
 ```bash
 python gui/main_window.py
+# or
+python -c "from gui.main_window import main; main()"
+# or
+python run_gui.py
 ```
 
 ### Command Line
